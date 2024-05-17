@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
     margin: 0;
     padding: 0;
@@ -38,6 +39,7 @@ body, html {
     text-align: center; /* Centrar el texto horizontalmente */
 }
 
+/* Estilos específicos para cada sección */
 #sobre-nosotros {
     background-image: url('recursos/fondo-hijosdelsol.png');
 }
@@ -58,6 +60,7 @@ body, html {
     background-image: url('recursos/fondo4.png');
 }
 
+/* Estilos de texto */
 h1, h2 {
     margin-bottom: 10px;
     color: #333; /* Color de texto gris oscuro */
@@ -69,11 +72,11 @@ p {
     color: #666; /* Color de texto gris medio */
     margin-bottom: 10px; /* Espaciado inferior */
     max-width: 90%; /* Limitar el ancho del texto */
-    font-size: 1.2em; /* Aumentar el tamaño del texto */
+    font-size: 1em;
 }
 
 a.link-box {
-    color: #FF4500; /* Color del enlace */
+    color: #333; /* Color de enlace */
     text-decoration: none; /* Quitar subrayado */
     font-weight: bold; /* Negrita */
     margin-top: 10px; /* Margen superior */
@@ -102,7 +105,7 @@ a.link-box:hover {
     filter: blur(8px); /* Desenfoque cuando se pasa el ratón */
 }
 
-/* Responsive Design */
+/* Diseño responsivo */
 @media (max-width: 768px) {
     .box {
         flex: 1 1 100%; /* Cada recuadro ocupa el ancho completo */
@@ -115,47 +118,6 @@ a.link-box:hover {
 
     p {
         font-size: 1em; /* Ajustar el tamaño del texto en pantallas pequeñas */
-    }
-}
-/* Estilos generales */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* Ajustes de tamaño y scroll */
-.box {
-    padding: 20px;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
-}
-
-.large {
-    background-color: #f9f9f9;
-}
-
-.medium {
-    background-color: #f0f0f0;
-}
-
-.small {
-    background-color: #e9e9e9;
-}
-
-/* Estilos responsivos */
-@media (max-width: 768px) {
-    .box {
-        width: 90%;
-        margin: 10px auto;
-    }
-}
-
-@media (max-width: 480px) {
-    .box {
-        width: 100%;
-        margin: 5px auto;
     }
 }
 
