@@ -1,39 +1,28 @@
-document.querySelectorAll('.box').forEach(box => {
-    box.addEventListener('mousemove', (event) => {
-        const boxRect = box.getBoundingClientRect();
-        const mouseX = event.clientX - boxRect.left;
-        const mouseY = event.clientY - boxRect.top;
-        const rotateY = (mouseX / boxRect.width - 0.5) * 5;
-        const rotateX = (mouseY / boxRect.height - 0.5) * -5; 
-        box.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) scale(1.02)`; 
-    });
-
-    box.addEventListener('mouseleave', () => {
-        box.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)'; 
-    });
-});
-
 document.addEventListener("DOMContentLoaded", function() {
-    function handleResize() {
-        const boxes = document.querySelectorAll('.box');
-        if (window.innerWidth <= 768) {
-            boxes.forEach(box => {
-                box.style.width = '90%';
-                box.style.margin = '10px auto';
-            });
-        } else if (window.innerWidth <= 480) {
-            boxes.forEach(box => {
-                box.style.width = '100%';
-                box.style.margin = '5px auto';
-            });
-        } else {
-            boxes.forEach(box => {
-                box.style.width = '';
-                box.style.margin = '10px';
-            });
-        }
-    }
+    const contentDiv = document.getElementById('content');
+    const recursosLink = document.getElementById('recursos-link');
 
-    window.addEventListener('resize', handleResize);
-    handleResize();
+    recursosLink.addEventListener('click', function(event) {
+        event.preventDefault();
+        fetch('/recursos.html')
+            .then(response => response.text())
+            .then(data => {
+                contentDiv.innerHTML = data;
+                window.history.pushState({page: 'recursos'}, 'Recursos', '/recursos');
+            })
+            .catch(error => console.error('Error al cargar los recursos:', error));
+    });
+
+    window.addEventListener('popstate', function(event) {
+        if (event.state && event.state.page === 'recursos') {
+            fetch('/recursos.html')
+                .then(response => response.text())
+                .then(data => {
+                    contentDiv.innerHTML = data;
+                })
+                .catch(error => console.error('Error al cargar los recursos:', error));
+        } else {
+            window.location.href = '/';
+        }
+    });
 });
