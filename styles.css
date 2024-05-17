@@ -1,4 +1,4 @@
-/* Estilos generales */
+
 * {
     margin: 0;
     padding: 0;
@@ -14,21 +14,21 @@ body, html {
     background: url('recursos/fondo.png') no-repeat center center fixed;
     background-size: cover;
     overflow: hidden;
-    background-color: #f0f0f0; /* Fondo de página gris claro */
-    flex-wrap: wrap; /* Permite que los recuadros se acomoden */
+    background-color: #f0f0f0;
+    flex-wrap: wrap; 
 }
 
 .box {
     padding: 20px;
-    border: 2px solid #ccc; /* Border for each box */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for each box */
+    border: 2px solid #ccc; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     overflow-y: auto;
     transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    margin: 10px; /* Espaciado entre recuadros */
+    margin: 10px; 
     position: relative;
-    flex: 1 1 calc(33.333% - 20px); /* Cada recuadro ocupa un tercio del ancho con espacio */
-    height: 45%; /* Altura ajustable */
-    background: linear-gradient(135deg, #FFB347 0%, #FFCC33 100%); /* Degradado de atardecer */
+    flex: 1 1 calc(33.333% - 20px); 
+    height: 45%; 
+    background: linear-gradient(135deg, #FFB347 0%, #FFCC33 100%); 
     background-size: cover;
     background-position: center;
     background-blend-mode: overlay;
@@ -36,10 +36,10 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center; /* Centrar el texto horizontalmente */
+    text-align: center;
 }
 
-/* Estilos específicos para cada sección */
+
 #sobre-nosotros {
     background-image: url('recursos/fondo-hijosdelsol.png');
 }
@@ -60,33 +60,33 @@ body, html {
     background-image: url('recursos/fondo4.png');
 }
 
-/* Estilos de texto */
+
 h1, h2 {
     margin-bottom: 10px;
-    color: #333; /* Color de texto gris oscuro */
-    font-size: 1.5em; /* Aumentar el tamaño del texto */
+    color: #333;
+    font-size: 1.5em; 
 }
 
 p {
     line-height: 1.6;
-    color: #666; /* Color de texto gris medio */
-    margin-bottom: 10px; /* Espaciado inferior */
-    max-width: 90%; /* Limitar el ancho del texto */
+    color: #666; 
+    margin-bottom: 10px; 
+    max-width: 90%; 
     font-size: 1em;
 }
 
 a.link-box {
-    color: #333; /* Color de enlace */
-    text-decoration: none; /* Quitar subrayado */
-    font-weight: bold; /* Negrita */
-    margin-top: 10px; /* Margen superior */
+    color: #333; 
+    text-decoration: none; 
+    font-weight: bold; 
+    margin-top: 10px; 
 }
 
 a.link-box:hover {
-    text-decoration: underline; /* Subrayado al pasar el mouse */
+    text-decoration: underline; 
 }
 
-/* Efecto de desenfoque al pasar el ratón */
+
 .box::before {
     content: '';
     position: absolute;
@@ -96,32 +96,32 @@ a.link-box:hover {
     bottom: 0;
     background: inherit;
     z-index: -1;
-    filter: blur(0px); /* Sin desenfoque por defecto */
+    filter: blur(0px); 
     transition: filter 0.3s;
     pointer-events: none;
 }
 
 .box:hover::before {
-    filter: blur(8px); /* Desenfoque cuando se pasa el ratón */
+    filter: blur(8px); 
 }
 
-/* Diseño responsivo */
+
 @media (max-width: 768px) {
     .box {
-        flex: 1 1 100%; /* Cada recuadro ocupa el ancho completo */
+        flex: 1 1 100%; 
         height: auto;
     }
 
     h1, h2 {
-        font-size: 1.2em; /* Ajustar el tamaño del texto en pantallas pequeñas */
+        font-size: 1.2em; 
     }
 
     p {
-        font-size: 1em; /* Ajustar el tamaño del texto en pantallas pequeñas */
+        font-size: 1em; 
     }
 }
 
-/* Scroll personalizado */
+
 body {
     overflow-y: scroll;
     scrollbar-width: thin;
