@@ -141,4 +141,11 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 2px solid #e0e0e0;
 }
+body {
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.fade-out {
+    opacity: 0;
+}
 
