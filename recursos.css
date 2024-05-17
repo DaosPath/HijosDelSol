@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif; /* Cambia la fuente si es necesario */
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('recursos/fondo-pagina.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.header {
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('recursos/fondo-encabezado.png') no-repeat center center;
+    background-size: cover;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    border-bottom: 2px solid #fff;
+    border-radius: 0 0 10px 10px;
+}
+
+.header img {
+    height: 50px;
+}
+
+.header .search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.header .search-bar input {
+    padding: 5px;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    width: 300px;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.header .search-bar input:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(255, 182, 193, 0.5); /* Sombra al enfocar */
+}
+
+.main-content {
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    z-index: 0;
+}
+
+.main-content h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 2px solid #ff6f61;
+    display: inline-block;
+    padding-bottom: 5px;
+    transition: color 0.3s ease; /* Transición suave */
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.book-card {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 200px;
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease; /* Transiciones suaves */
+}
+
+.book-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.book-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-bottom: 2px solid #ccc; /* Borde inferior */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados */
+}
+
+.book-card .content {
+    padding: 15px;
+    transition: background 0.3s ease; /* Transición suave */
+}
+
+.book-card .content h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.book-card .content p {
+    font-size: 0.9em;
+    color: #666;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.book-card .content .genre {
+    font-weight: bold;
+    color: #ff6f61;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.modal-content {
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('recursos/fondo-encabezado.png') no-repeat center center;
+    background-size: cover;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px; /* Tamaño más pequeño */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease; /* Transición suave */
+}
+
+.modal-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border: 2px solid #fff; /* Borde blanco */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.modal-content .modal-info {
+    text-align: center;
+}
+
+.modal-content h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.modal-content p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.modal-content a button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Transición suave */
+}
+
+.modal-content a button:hover {
+    background-color: #ff4a3d;
+}
+
+.close {
+    color: #fff;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .header img {
+        margin-bottom: 10px;
+    }
+
+    .book-card {
+        max-width: 100%;
+    }
+
+    .header .search-bar input {
+        width: 100%;
+    }
+}
+/* Añadir estas reglas al final del archivo recursos.css */
+
+/* Estilos de la animación de aparición */
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Aplicar animación a la modal-content */
+.modal-content {
+    animation: slideIn 0.4s ease-out, fadeIn 0.4s ease-out;
+}

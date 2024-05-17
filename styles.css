@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('recursos/fondo.png') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+    background-color: #f0f0f0; /* Fondo de página gris claro */
+    flex-wrap: wrap; /* Permite que los recuadros se acomoden */
+}
+
+.box {
+    padding: 20px;
+    border: 2px solid #ccc; /* Border for each box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for each box */
+    overflow-y: auto;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    margin: 10px; /* Espaciado entre recuadros */
+    position: relative;
+    flex: 1 1 calc(33.333% - 20px); /* Cada recuadro ocupa un tercio del ancho con espacio */
+    height: 45%; /* Altura ajustable */
+    background: linear-gradient(135deg, #FFB347 0%, #FFCC33 100%); /* Degradado de atardecer */
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Centrar el texto horizontalmente */
+}
+
+#sobre-nosotros {
+    background-image: url('recursos/fondo-hijosdelsol.png');
+}
+
+#ensenanzas {
+    background-image: url('recursos/fondo1.png');
+}
+
+#eventos {
+    background-image: url('recursos/fondo2.png');
+}
+
+#contacto {
+    background-image: url('recursos/fondo3.png');
+}
+
+#recursos {
+    background-image: url('recursos/fondo4.png');
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    color: #333; /* Color de texto gris oscuro */
+    font-size: 1.5em; /* Aumentar el tamaño del texto */
+}
+
+p {
+    line-height: 1.6;
+    color: #666; /* Color de texto gris medio */
+    margin-bottom: 10px; /* Espaciado inferior */
+    max-width: 90%; /* Limitar el ancho del texto */
+    font-size: 1.2em; /* Aumentar el tamaño del texto */
+}
+
+a.link-box {
+    color: #FF4500; /* Color del enlace */
+    text-decoration: none; /* Quitar subrayado */
+    font-weight: bold; /* Negrita */
+    margin-top: 10px; /* Margen superior */
+}
+
+a.link-box:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+/* Efecto de desenfoque al pasar el ratón */
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    z-index: -1;
+    filter: blur(0px); /* Sin desenfoque por defecto */
+    transition: filter 0.3s;
+    pointer-events: none;
+}
+
+.box:hover::before {
+    filter: blur(8px); /* Desenfoque cuando se pasa el ratón */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .box {
+        flex: 1 1 100%; /* Cada recuadro ocupa el ancho completo */
+        height: auto;
+    }
+
+    h1, h2 {
+        font-size: 1.2em; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+
+    p {
+        font-size: 1em; /* Ajustar el tamaño del texto en pantallas pequeñas */
+    }
+}
