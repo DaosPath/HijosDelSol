@@ -31,7 +31,7 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
         modal.style.display = 'flex';
-        modalContent.classList.remove('hidden');
+        modalContent.classList.remove('hidden'); 
     });
 });
 
