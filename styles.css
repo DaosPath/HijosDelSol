@@ -141,13 +141,3 @@ body::-webkit-scrollbar-thumb {
     border-radius: 10px;
     border: 2px solid #e0e0e0;
 }
-
-.icon-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.icono {
-    width: 50px; /* Ajusta el tamaño del icono según sea necesario */
-    height: auto;
-}
