@@ -31,7 +31,7 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
         modal.style.display = 'flex';
-        modalContent.classList.remove('hidden'); 
+        modal.classList.remove('hidden');
     });
 });
 
@@ -44,3 +44,6 @@ window.onclick = function(event) {
         modal.style.display = 'none';
     }
 }
+
+// Fade-in effect
+document.body.classList.add('fade-in');
