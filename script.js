@@ -37,34 +37,3 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', handleResize);
     handleResize();
 });
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.box');
-
-    function navigateToSection(event) {
-        event.preventDefault();
-        const targetId = event.target.getAttribute('href').substring(1);
-        sections.forEach(section => {
-            if (section.id === targetId) {
-                section.classList.remove('hidden');
-                setTimeout(() => {
-                    section.scrollIntoView({ behavior: 'smooth' });
-                }, 100);
-            } else {
-                section.classList.add('hidden');
-            }
-        });
-    }
-
-    links.forEach(link => {
-        link.addEventListener('click', navigateToSection);
-    });
-
-    // Hide all sections except the first one initially
-    sections.forEach((section, index) => {
-        if (index !== 0) {
-            section.classList.add('hidden');
-        }
-    });
-});
