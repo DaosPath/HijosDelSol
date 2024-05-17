@@ -250,5 +250,14 @@ body, html {
     animation: slideIn 0.4s ease-out, fadeIn 0.4s ease-out;
 }
 
+.icon-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.icono {
+    width: 50px; /* Ajusta el tamaño del icono según sea necesario */
+    height: auto;
+}
 
 
