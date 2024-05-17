@@ -117,3 +117,65 @@ a.link-box:hover {
         font-size: 1em; /* Ajustar el tamaño del texto en pantallas pequeñas */
     }
 }
+/* Estilos generales */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Ajustes de tamaño y scroll */
+.box {
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 2px 2px 12px rgba(0,0,0,0.1);
+}
+
+.large {
+    background-color: #f9f9f9;
+}
+
+.medium {
+    background-color: #f0f0f0;
+}
+
+.small {
+    background-color: #e9e9e9;
+}
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+    .box {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .box {
+        width: 100%;
+        margin: 5px auto;
+    }
+}
+
+/* Scroll personalizado */
+body {
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #e0e0e0;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
