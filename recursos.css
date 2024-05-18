@@ -1,17 +1,3 @@
-body {
-    transition: opacity 0.5s ease-in-out;
-}
-
-body.fade-in {
-    opacity: 1;
-}
-
-.hidden {
-    display: none;
-}
-
-
-
 * {
     margin: 0;
     padding: 0;
@@ -265,13 +251,4 @@ body, html {
 }
 
 
-/* recursos.css */
-.book-list {
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0; /* Start hidden */
-}
-
-.book-list.fade-in {
-    opacity: 1;
-}
 
