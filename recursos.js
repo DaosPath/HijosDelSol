@@ -45,5 +45,4 @@ window.onclick = function(event) {
     }
 }
 
-// Fade-in effect
 document.body.classList.add('fade-in');
