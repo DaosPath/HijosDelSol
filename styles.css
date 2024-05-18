@@ -149,3 +149,11 @@ body.fade-out {
     opacity: 0;
 }
 
+/* styles.css */
+.box {
+    transition: opacity 0.5s ease-in-out;
+}
+
+.box.hidden {
+    opacity: 0;
+}

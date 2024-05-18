@@ -1,48 +1,47 @@
-document.getElementById('search-input').addEventListener('input', filterBooks);
+// recursos.js
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('myModal');
+    const modalClose = document.querySelector('.close');
+    const bookCards = document.querySelectorAll('.book-card');
+    const bookList = document.getElementById('book-list');
 
-function filterBooks() {
-    const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const books = document.querySelectorAll('.book-card');
+    bookCards.forEach(card => {
+        card.addEventListener('click', () => {
+            const title = card.getAttribute('data-title');
+            const description = card.getAttribute('data-description');
+            const cover = card.getAttribute('data-cover');
+            const downloadLink = card.getAttribute('data-download');
 
-    books.forEach(book => {
-        const title = book.getAttribute('data-title').toLowerCase();
-        const genre = book.getAttribute('data-genre').toLowerCase();
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-cover').src = cover;
+            document.getElementById('modal-download').href = downloadLink;
 
-        if (title.includes(searchInput) || genre.includes(searchInput)) {
-            book.style.display = 'block';
-        } else {
-            book.style.display = 'none';
+            modal.classList.remove('hidden');
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.classList.add('hidden');
         }
     });
-}
 
-// Modal functionality
-const modal = document.getElementById('myModal');
-const modalTitle = document.getElementById('modal-title');
-const modalDescription = document.getElementById('modal-description');
-const modalDownload = document.getElementById('modal-download');
-const modalCover = document.getElementById('modal-cover');
-const span = document.getElementsByClassName('close')[0];
-
-document.querySelectorAll('.book-card').forEach(book => {
-    book.addEventListener('click', () => {
-        modalTitle.textContent = book.getAttribute('data-title');
-        modalDescription.textContent = book.getAttribute('data-description');
-        modalDownload.href = book.getAttribute('data-download');
-        modalCover.src = book.getAttribute('data-cover');
-        modal.style.display = 'flex';
-        modal.classList.remove('hidden');
+    // Handle view transition
+    window.addEventListener('popstate', () => {
+        if (bookList) {
+            bookList.classList.remove('fade-in');
+            void bookList.offsetWidth;  // Trigger reflow
+            bookList.classList.add('fade-in');
+        }
     });
-});
 
-span.onclick = function() {
-    modal.style.display = 'none';
-}
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none';
+    // Initial load animation
+    if (bookList) {
+        bookList.classList.add('fade-in');
     }
-}
-
-document.body.classList.add('fade-in');
+});
