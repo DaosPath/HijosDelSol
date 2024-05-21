@@ -1,6 +1,6 @@
 {
-    "rewrites": [
-      { "source": "/recursos", "destination": "/recursos.html" }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/recursos", "destination": "/recursos.html" },
+    { "source": "/discord", "destination": "/discord.html" }
+  ]
+}
