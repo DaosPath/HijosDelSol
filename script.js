@@ -36,6 +36,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('resize', handleResize);
     handleResize();
+
+    document.querySelectorAll('.box').forEach(box => {
+        box.classList.remove('hidden');
+        box.style.opacity = '1';
+    });
 });
 
 document.querySelectorAll('.link-box').forEach(link => {
@@ -48,4 +53,3 @@ document.querySelectorAll('.link-box').forEach(link => {
         }, 500);
     });
 });
-
