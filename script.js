@@ -37,10 +37,14 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener('resize', handleResize);
     handleResize();
 
+    // Restablece la visibilidad de las cajas cuando se carga la página
     document.querySelectorAll('.box').forEach(box => {
         box.classList.remove('hidden');
         box.style.opacity = '1';
     });
+
+    // Restablece la opacidad del body al cargar la página
+    document.body.classList.remove('fade-out');
 });
 
 document.querySelectorAll('.link-box').forEach(link => {
