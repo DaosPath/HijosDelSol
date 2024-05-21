@@ -1,0 +1,75 @@
+/* styles-discord.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif; 
+    overflow-x: hidden;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('recursos/fondo-pagina.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animated-container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    overflow: hidden;
+    animation: bounce 2s infinite;
+}
+
+.animated-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('recursos/fondo-encabezado.png') no-repeat center center;
+    background-size: cover;
+    filter: blur(2px); /* Reducción del desenfoque */
+    z-index: -1;
+}
+
+.animated-container p {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    z-index: 1;
+}
+
+.animated-container a {
+    color: #ff6f61;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    z-index: 1;
+}
+
+.animated-container a:hover {
+    text-decoration: underline;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+}
