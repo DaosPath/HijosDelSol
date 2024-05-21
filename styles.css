@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -13,9 +12,30 @@ body, html {
     align-items: center;
     background: url('recursos/fondo.png') no-repeat center center fixed;
     background-size: cover;
-    overflow: hidden;
     background-color: #f0f0f0;
     flex-wrap: wrap; 
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #e0e0e0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #e0e0e0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+}
+
+body.fade-out {
+    opacity: 0;
 }
 
 .box {
@@ -23,7 +43,7 @@ body, html {
     border: 2px solid #ccc; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
     overflow-y: auto;
-    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease, opacity 0.5s ease-in-out;
     margin: 10px; 
     position: relative;
     flex: 1 1 calc(33.333% - 20px); 
@@ -39,6 +59,27 @@ body, html {
     text-align: center;
 }
 
+.box.hidden {
+    opacity: 0;
+}
+
+.box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit;
+    z-index: -1;
+    filter: blur(0px); 
+    transition: filter 0.3s;
+    pointer-events: none;
+}
+
+.box:hover::before {
+    filter: blur(8px); 
+}
 
 #sobre-nosotros {
     background-image: url('recursos/fondo-hijosdelsol.png');
@@ -59,7 +100,6 @@ body, html {
 #recursos {
     background-image: url('recursos/fondo4.png');
 }
-
 
 h1, h2 {
     margin-bottom: 10px;
@@ -86,26 +126,6 @@ a.link-box:hover {
     text-decoration: underline; 
 }
 
-
-.box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: inherit;
-    z-index: -1;
-    filter: blur(0px); 
-    transition: filter 0.3s;
-    pointer-events: none;
-}
-
-.box:hover::before {
-    filter: blur(8px); 
-}
-
-
 @media (max-width: 768px) {
     .box {
         flex: 1 1 100%; 
@@ -119,41 +139,4 @@ a.link-box:hover {
     p {
         font-size: 1em; 
     }
-}
-
-
-body {
-    overflow-y: scroll;
-    scrollbar-width: thin;
-    scrollbar-color: #888 #e0e0e0;
-}
-
-body::-webkit-scrollbar {
-    width: 8px;
-}
-
-body::-webkit-scrollbar-track {
-    background: #e0e0e0;
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #888;
-    border-radius: 10px;
-    border: 2px solid #e0e0e0;
-}
-body {
-    transition: opacity 0.5s ease-in-out;
-}
-
-body.fade-out {
-    opacity: 0;
-}
-
-/* styles.css */
-.box {
-    transition: opacity 0.5s ease-in-out;
-}
-
-.box.hidden {
-    opacity: 0;
 }
