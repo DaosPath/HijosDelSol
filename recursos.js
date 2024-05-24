@@ -7,8 +7,9 @@ function filterBooks() {
     books.forEach(book => {
         const title = book.getAttribute('data-title').toLowerCase();
         const genre = book.getAttribute('data-genre').toLowerCase();
+        const author = book.getAttribute('data-author').toLowerCase();
 
-        if (title.includes(searchInput) || genre.includes(searchInput)) {
+        if (title.includes(searchInput) || genre.includes(searchInput) || author.includes(searchInput)) {
             book.style.display = 'block';
         } else {
             book.style.display = 'none';
@@ -27,7 +28,7 @@ const span = document.getElementsByClassName('close')[0];
 document.querySelectorAll('.book-card').forEach(book => {
     book.addEventListener('click', () => {
         modalTitle.textContent = book.getAttribute('data-title');
-        modalAuthor.textContent = book.getAttribute('data-author');
+        modalAuthor.textContent = "Autor: " + book.getAttribute('data-author');
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
