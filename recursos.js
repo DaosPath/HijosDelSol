@@ -22,7 +22,6 @@ const modalTitle = document.getElementById('modal-title');
 const modalAuthor = document.getElementById('modal-author');
 const modalDescription = document.getElementById('modal-description');
 const modalDownload = document.getElementById('modal-download');
-const modalRead = document.getElementById('modal-read');
 const modalCover = document.getElementById('modal-cover');
 const span = document.getElementsByClassName('close')[0];
 
@@ -32,7 +31,6 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalAuthor.textContent = "Autor: " + book.getAttribute('data-author');
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
-        modalRead.href = book.getAttribute('data-read');
         modalCover.src = book.getAttribute('data-cover');
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
