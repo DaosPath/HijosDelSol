@@ -16,9 +16,9 @@ function filterBooks() {
     });
 }
 
-// Modal functionality
 const modal = document.getElementById('myModal');
 const modalTitle = document.getElementById('modal-title');
+const modalAuthor = document.getElementById('modal-author');
 const modalDescription = document.getElementById('modal-description');
 const modalDownload = document.getElementById('modal-download');
 const modalCover = document.getElementById('modal-cover');
@@ -27,11 +27,12 @@ const span = document.getElementsByClassName('close')[0];
 document.querySelectorAll('.book-card').forEach(book => {
     book.addEventListener('click', () => {
         modalTitle.textContent = book.getAttribute('data-title');
+        modalAuthor.textContent = book.getAttribute('data-author');
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
         modal.style.display = 'flex';
-        modalContent.classList.remove('hidden'); 
+        modal.classList.remove('hidden');
     });
 });
 
@@ -45,6 +46,10 @@ window.onclick = function(event) {
     }
 }
 
-
-
-
+window.addEventListener('load', () => {
+    if (document.body.classList.contains('fade-in')) {
+        setTimeout(() => {
+            document.body.classList.remove('fade-in');
+        }, 500);
+    }
+});

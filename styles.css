@@ -57,6 +57,7 @@ body.fade-out {
     justify-content: center;
     align-items: center;
     text-align: center;
+    border-radius: 10px;
 }
 
 .box.hidden {
