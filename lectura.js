@@ -1,6 +1,6 @@
 // Ruta a los archivos PDF.js
 const pdfjsLib = window['pdfjs-dist/build/pdf'];
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/pdf.worker.js';
+pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/build/pdf.worker.mjs';
 
 const urlParams = new URLSearchParams(window.location.search);
 const pdfUrl = urlParams.get('pdf');
