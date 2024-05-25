@@ -23,8 +23,8 @@ const modalAuthor = document.getElementById('modal-author');
 const modalDescription = document.getElementById('modal-description');
 const modalDownload = document.getElementById('modal-download');
 const modalCover = document.getElementById('modal-cover');
+const modalLectura = document.getElementById('modal-lectura');
 const span = document.getElementsByClassName('close')[0];
-const modalPrelectura = document.getElementById('modal-prelectura');
 
 document.querySelectorAll('.book-card').forEach(book => {
     book.addEventListener('click', () => {
@@ -33,7 +33,7 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
-        modalPrelectura.href = book.getAttribute('data-prelectura');
+        modalLectura.href = `lectura.html?book=${book.getAttribute('data-lectura')}`;
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
     });
