@@ -9,7 +9,9 @@
 </head>
 <body>
     <header class="header">
-        <img src="recursos/logo.png" alt="Logo de Hijos del Sol">
+        <a href="index.html">
+            <img src="recursos/logo.png" alt="Logo de Hijos del Sol">
+        </a>
         <div class="search-bar">
             <input type="text" id="search-input" placeholder="Buscar libros, autores, temas...">
         </div>
@@ -85,10 +87,10 @@
             </div>
 
             <!-- Libro 7 -->
-            <div class="book-card" data-title="Los Sutras del Sol" data-genre="Espiritual" data-author="Autor 7" data-description="Una colección de enseñanzas espirituales que iluminan el camino hacia el bien supremo." data-download="pdf/Los_Sutras_del_Sol_-_Hijos_Del_Sol.pdf" data-cover="recursos/portada7.png">
+            <div class="book-card" data-title="Los Sutras del Sol" data-genre="Espiritual" data-author="Autor 7" data-description="Una colección de enseñanzas espirituales que iluminan el camino hacia el bien supremo." data-download="pdf/Los_Sutras_del_Sol_-_Hijos_Del_Sol.pdf" data-cover="recursos/portada7.png" data-prelectura="pdf/prelectura_Los_Sutras_del_Sol.pdf">
                 <img src="recursos/portada7.png" alt="Portada del Libro 7">
                 <div class="content">
-                    <h3>Libro 7: Los Sutras del Sol</h3>
+                    <h3>Los Sutras del Sol</h3>
                     <p>Autor: Hijos del Sol</p>
                     <p>Una colección de enseñanzas espirituales que iluminan el camino hacia el bien supremo.</p>
                     <p class="genre">Género: Espiritual</p>
@@ -96,7 +98,7 @@
             </div>
 
             <!-- Libro 8 -->
-            <div class="book-card" data-title="Nuestro derecho a las drogas" data-genre="Ensayo" data-author="Thomas Szasz" data-description="Defiende el mercado libre de drogas y critica la prohibición estatal como una forma de coacción y control social." data-download="pdf/Nuestro_derecho_a_las_drogas.pdf" data-cover="recursos/nuestro-derecho-drogas.jpeg">
+            <div class="book-card" data-title="Nuestro derecho a las drogas" data-genre="Ensayo" data-author="Thomas Szasz" data-description="Defiende el mercado libre de drogas y critica la prohibición estatal como una forma de coacción y control social." data-download="pdf/Nuestro_derecho_a_las_drogas.pdf" data-cover="recursos/nuestro-derecho-drogas.jpeg" data-prelectura="pdf/prelectura_Nuestro_derecho_a_las_drogas.pdf">
                 <img src="recursos/nuestro-derecho-drogas.jpeg" alt="Portada del Libro 8">
                 <div class="content">
                     <h3>Nuestro derecho a las drogas</h3>
@@ -107,9 +109,6 @@
             </div>
         </div>
     </main>
-
-
-    
 
     <!-- Modal -->
     <div id="myModal" class="modal hidden">
@@ -122,6 +121,9 @@
                 <p id="modal-description"></p>
                 <a id="modal-download" href="" download>
                     <button>Descargar</button>
+                </a>
+                <a id="modal-prelectura" href="" target="_blank">
+                    <button>Prelectura</button>
                 </a>
             </div>
         </div>
