@@ -1,7 +1,6 @@
 {
   "rewrites": [
     { "source": "/recursos", "destination": "/recursos.html" },
-    { "source": "/discord", "destination": "/discord.html" },
-    { "source": "/lectura/:book", "destination": "/lectura.html?book=:book" }
+    { "source": "/discord", "destination": "/discord.html" }
   ]
 }
