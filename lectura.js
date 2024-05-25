@@ -1,33 +1,30 @@
-// Ruta a los archivos PDF.js
-const pdfjsLib = window['pdfjs-dist/build/pdf'];
-pdfjsLib.GlobalWorkerOptions.workerSrc = 'pdfjs/build/pdf.worker.mjs';
+window.addEventListener('load', () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const book = urlParams.get('book');
+    if (book) {
+        const iframe = document.getElementById('lectura-iframe');
+        iframe.src = `pdf/${book}`;
+    }
+});
 
-const urlParams = new URLSearchParams(window.location.search);
-const pdfUrl = urlParams.get('pdf');
+let currentPage = 1;
+const iframe = document.getElementById('lectura-iframe');
+const prevPageButton = document.getElementById('prev-page');
+const nextPageButton = document.getElementById('next-page');
 
-if (pdfUrl) {
-    const loadingTask = pdfjsLib.getDocument(pdfUrl);
-    loadingTask.promise.then(pdf => {
-        const pdfViewer = document.getElementById('pdf-viewer');
+prevPageButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        updatePage();
+    }
+});
 
-        for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-            pdf.getPage(pageNumber).then(page => {
-                const scale = 1.5;
-                const viewport = page.getViewport({ scale: scale });
+nextPageButton.addEventListener('click', () => {
+    currentPage++;
+    updatePage();
+});
 
-                const canvas = document.createElement('canvas');
-                const context = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
-
-                pdfViewer.appendChild(canvas);
-
-                const renderContext = {
-                    canvasContext: context,
-                    viewport: viewport
-                };
-                page.render(renderContext);
-            });
-        }
-    });
+function updatePage() {
+    const iframe = document.getElementById('lectura-iframe');
+    iframe.src = `${iframe.src.split('#')[0]}#page=${currentPage}`;
 }

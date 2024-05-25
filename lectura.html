@@ -5,13 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lectura</title>
     <link rel="stylesheet" href="lectura.css">
-    <script src="pdfjs/build/pdf.mjs"></script> <!-- Ruta al archivo pdf.js -->
+    <link rel="icon" type="image/png" href="recursos/icono.png">
 </head>
 <body>
-    <div class="pdf-container">
-        <div id="pdf-viewer" class="pdf-viewer"></div>
-    </div>
-
+    <header class="header">
+        <a href="recursos.html">
+            <img src="recursos/logo.png" alt="Logo de Hijos del Sol">
+        </a>
+    </header>
+    <main class="main-content">
+        <iframe id="lectura-iframe" src=""></iframe>
+        <div class="controls">
+            <button id="prev-page">Anterior</button>
+            <button id="next-page">Siguiente</button>
+        </div>
+    </main>
     <script src="lectura.js"></script>
 </body>
 </html>
