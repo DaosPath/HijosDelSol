@@ -32,6 +32,7 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
+        modal.querySelector('.lectura').setAttribute('data-download', book.getAttribute('data-download'));
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
     });
@@ -47,7 +48,7 @@ window.onclick = function(event) {
     }
 }
 
-document.querySelectorAll('.prelectura').forEach(button => {
+document.querySelectorAll('.lectura').forEach(button => {
     button.addEventListener('click', (e) => {
         const book = e.target.getAttribute('data-download').split('/').pop();
         window.location.href = `/lectura/${book}`;
