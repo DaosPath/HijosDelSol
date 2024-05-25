@@ -32,7 +32,6 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
-        modal.querySelector('.lectura').setAttribute('data-download', book.getAttribute('data-download'));
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
     });
@@ -48,17 +47,17 @@ window.onclick = function(event) {
     }
 }
 
-document.querySelectorAll('.lectura').forEach(button => {
-    button.addEventListener('click', (e) => {
-        const book = e.target.getAttribute('data-download').split('/').pop();
-        window.location.href = `/lectura/${book}`;
-    });
-});
-
 window.addEventListener('load', () => {
     if (document.body.classList.contains('fade-in')) {
         setTimeout(() => {
             document.body.classList.remove('fade-in');
         }, 500);
     }
+});
+
+document.querySelectorAll('.prelectura-button').forEach(button => {
+    button.addEventListener('click', (e) => {
+        const book = e.target.getAttribute('data-book');
+        window.location.href = `/lectura/${book}`;
+    });
 });
