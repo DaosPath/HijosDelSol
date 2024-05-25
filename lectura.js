@@ -3,6 +3,6 @@ window.addEventListener('load', () => {
     const book = urlParams.get('book');
     if (book) {
         const iframe = document.getElementById('lectura-iframe');
-        iframe.src = `prelectura/${book}.pdf`; // Ajustar la ruta a tus archivos PDF
+        iframe.src = `pdf/${book}`; // Ajustar la ruta a tus archivos PDF
     }
 });

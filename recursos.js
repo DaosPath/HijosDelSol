@@ -33,7 +33,7 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalDescription.textContent = book.getAttribute('data-description');
         modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
-        modalLectura.href = `lectura.html?book=${book.getAttribute('data-lectura')}`;
+        modalLectura.href = `lectura.html?book=${book.getAttribute('data-download').split('/').pop()}`;
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
     });
