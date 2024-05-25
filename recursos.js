@@ -24,6 +24,7 @@ const modalDescription = document.getElementById('modal-description');
 const modalDownload = document.getElementById('modal-download');
 const modalCover = document.getElementById('modal-cover');
 const span = document.getElementsByClassName('close')[0];
+const prelecturaButton = document.getElementById('prelectura-button');
 
 document.querySelectorAll('.book-card').forEach(book => {
     book.addEventListener('click', () => {
@@ -34,6 +35,12 @@ document.querySelectorAll('.book-card').forEach(book => {
         modalCover.src = book.getAttribute('data-cover');
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
+
+        // Actualizar el enlace de prelectura
+        prelecturaButton.onclick = () => {
+            const pdfUrl = book.getAttribute('data-download');
+            window.open(`lectura.html?pdf=${encodeURIComponent(pdfUrl)}`, '_blank');
+        };
     });
 });
 
@@ -53,12 +60,4 @@ window.addEventListener('load', () => {
             document.body.classList.remove('fade-in');
         }, 500);
     }
-});
-
-document.querySelectorAll('.prelectura-button').forEach(button => {
-    button.addEventListener('click', () => {
-        const bookCard = button.closest('.book-card');
-        const pdfUrl = bookCard.getAttribute('data-download');
-        window.open(`lectura.html?pdf=${encodeURIComponent(pdfUrl)}`, '_blank');
-    });
 });
