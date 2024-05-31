@@ -1,6 +1,7 @@
 {
   "rewrites": [
     { "source": "/recursos", "destination": "/recursos.html" },
-    { "source": "/discord", "destination": "/discord.html" }
+    { "source": "/discord", "destination": "/discord.html" },
+    { "source": "/index.html", "destination": "https://hijosdelsol.xyz" }
   ]
 }
