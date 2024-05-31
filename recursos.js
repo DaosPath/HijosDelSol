@@ -2,7 +2,7 @@ document.getElementById('search-input').addEventListener('input', filterBooks);
 
 function filterBooks() {
     const searchInput = document.getElementById('search-input').value.toLowerCase();
-    const books = document.querySelectorAll('.book-card');
+    const books = document.querySelectorAll('.book-card, .comic-card');
 
     books.forEach(book => {
         const title = book.getAttribute('data-title').toLowerCase();
@@ -26,7 +26,7 @@ const modalCover = document.getElementById('modal-cover');
 const modalLectura = document.getElementById('modal-lectura');
 const span = document.getElementsByClassName('close')[0];
 
-document.querySelectorAll('.book-card').forEach(book => {
+document.querySelectorAll('.book-card, .comic-card').forEach(book => {
     book.addEventListener('click', () => {
         modalTitle.textContent = book.getAttribute('data-title');
         modalAuthor.textContent = "Autor: " + book.getAttribute('data-author');

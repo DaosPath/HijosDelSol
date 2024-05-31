@@ -71,7 +71,7 @@ body, html {
     gap: 20px;
 }
 
-.book-card {
+.book-card, .comic-card {
     background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc;
@@ -83,13 +83,13 @@ body, html {
     transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease; 
 }
 
-.book-card:hover {
+.book-card:hover, .comic-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     background: rgba(255, 255, 255, 1);
 }
 
-.book-card img {
+.book-card img, .comic-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
@@ -97,29 +97,28 @@ body, html {
     border-radius: 8px 8px 0 0;
 }
 
-.book-card .content {
+.book-card .content, .comic-card .content {
     padding: 15px;
     transition: background 0.3s ease; 
 }
 
-.book-card .content h3 {
+.book-card .content h3, .comic-card .content h3 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
 }
 
-.book-card .content p {
+.book-card .content p, .comic-card .content p {
     font-size: 0.9em;
     color: #666;
     margin-bottom: 10px;
     line-height: 1.4;
 }
 
-.book-card .content .genre {
+.book-card .content .genre, .comic-card .content .genre {
     font-weight: bold;
     color: #ff6f61;
 }
-
 
 .modal {
     display: none; 
@@ -216,7 +215,7 @@ body, html {
         margin-bottom: 10px;
     }
 
-    .book-card {
+    .book-card, .comic-card {
         max-width: 100%;
     }
 
@@ -245,10 +244,6 @@ body, html {
     }
 }
 
-
 .modal-content {
     animation: slideIn 0.4s ease-out, fadeIn 0.4s ease-out;
 }
-
-
-
