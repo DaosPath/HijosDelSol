@@ -179,6 +179,7 @@ body, html {
     border: 2px solid #ff6f61;
     border-radius: 5px;
     transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+    text-align: center;
 }
 
 .chapter-list ul li:hover {
@@ -234,20 +235,43 @@ body, html {
     cursor: not-allowed;
 }
 
-.toggle-theme-button {
-    padding: 10px 20px;
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    z-index: 1000;
+@media (max-width: 768px) {
+    .comic-info {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .comic-content {
+        flex-direction: column;
+    }
+
+    .comic-cover {
+        margin-bottom: 20px;
+    }
+
+    .search-input {
+        max-width: 100%;
+    }
+
+    .chapter-list ul {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
 }
 
-.toggle-theme-button:hover {
-    background-color: #ff4a3d;
+@media (max-width: 480px) {
+    .comic-details h1 {
+        font-size: 1.5em;
+    }
+
+    .comic-details .views-likes, .comic-details .genre, .comic-details .description {
+        font-size: 0.9em;
+    }
+
+    .chapter-list h2 {
+        font-size: 1.5em;
+    }
+
+    .chapter-list ul {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
 }
