@@ -12,6 +12,7 @@
         <a href="../index.html">
             <img src="../recursos/logo.png" alt="Logo de Hijos del Sol">
         </a>
+        <button class="toggle-theme-button" onclick="toggleTheme()">Cambiar Tema</button>
     </header>
     <main class="main-content">
         <div class="comic-info">
@@ -21,22 +22,20 @@
                 <div class="comic-details">
                     <h1>La Hoja del Norte</h1>
                     <p class="views-likes">8304700 vistas · 51389 me gusta</p>
+                    <p class="genre">Género: Aventura, Fantasía</p>
+                    <p class="description">Sigue las aventuras de un joven guerrero en su búsqueda para encontrar la legendaria Hoja del Norte, una espada mítica que se dice otorga poderes inimaginables a su portador. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi dictum odio, a feugiat libero lorem vel nulla.</p>
                     <div class="buttons">
-                        <button class="follow-button">+ Seguir</button>
+                        <button class="follow-button" onclick="followComic()">+ Seguir</button>
                         <button class="first-chapter-button">Primer capítulo</button>
                     </div>
-                    <p class="description">
-                        Sigue las aventuras de un joven guerrero en su búsqueda para encontrar la legendaria Hoja del Norte, una espada mítica que se dice otorga poderes inimaginables a su portador.
-                    </p>
                 </div>
             </div>
         </div>
         <div class="chapter-list">
             <h2>Capítulos</h2>
-            <ul id="chapter-list">
-                <li><a href="chapters/chapter1.html">Capítulo 1: El Comienzo</a></li>
-                <li><a href="chapters/chapter2.html">Capítulo 2: El Despertar</a></li>
-                <!-- Más capítulos aquí -->
+            <input type="text" class="search-input" id="searchInput" placeholder="Buscar capítulo..." onkeyup="searchChapters()">
+            <ul id="chapterList">
+                <!-- Capítulos generados dinámicamente con JavaScript -->
             </ul>
         </div>
     </main>

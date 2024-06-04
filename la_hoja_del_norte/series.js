@@ -1,90 +1,58 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const followButton = document.querySelector('.follow-button');
-    const firstChapterButton = document.querySelector('.first-chapter-button');
-    const chapterList = document.getElementById('chapter-list');
-    const seriesTitle = document.querySelector('.comic-details h1').textContent;
+    generateChapters();
+    applyFollowStatus();
+    applyTheme();
+});
 
-    // Manejador de evento para el botón de seguir
-    followButton.addEventListener('click', () => {
-        saveSeries(seriesTitle);
-        followButton.textContent = 'Siguiendo';
-        followButton.disabled = true;
-    });
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-theme');
+    localStorage.setItem('theme', body.classList.contains('dark-theme') ? 'dark' : 'light');
+}
 
-    // Manejador de evento para el botón del primer capítulo
-    firstChapterButton.addEventListener('click', () => {
-        window.location.href = 'chapters/chapter1.html';
-    });
-
-    // Función para agregar capítulos
-    const addChapters = (start, end) => {
-        for (let i = start; i <= end; i++) {
-            const li = document.createElement('li');
-            li.innerHTML = `<a href="chapters/chapter${i}.html">Capítulo ${i}: Título del capítulo</a>`;
-            chapterList.appendChild(li);
-        }
-    };
-
-    // Agregar capítulos del 1 al 100
-    addChapters(3, 100);
-
-    // Manejador de eventos para la búsqueda de capítulos
-    const searchInput = document.createElement('input');
-    searchInput.setAttribute('type', 'text');
-    searchInput.setAttribute('placeholder', 'Buscar capítulo...');
-    searchInput.classList.add('search-input');
-    chapterList.parentNode.insertBefore(searchInput, chapterList);
-
-    searchInput.addEventListener('input', () => {
-        const filter = searchInput.value.toLowerCase();
-        const chapters = chapterList.getElementsByTagName('li');
-
-        for (let i = 0; i < chapters.length; i++) {
-            const a = chapters[i].getElementsByTagName('a')[0];
-            const txtValue = a.textContent || a.innerText;
-
-            if (txtValue.toLowerCase().indexOf(filter) > -1) {
-                chapters[i].style.display = "";
-            } else {
-                chapters[i].style.display = "none";
-            }
-        }
-    });
-
-    // Función para cambiar el tema
-    const toggleThemeButton = document.createElement('button');
-    toggleThemeButton.textContent = 'Cambiar tema';
-    toggleThemeButton.classList.add('toggle-theme-button');
-    document.body.insertBefore(toggleThemeButton, document.body.firstChild);
-
-    toggleThemeButton.addEventListener('click', () => {
-        document.body.classList.toggle('dark-theme');
-        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-    });
-
-    // Establecer el tema oscuro si está almacenado en el localStorage
-    if (localStorage.getItem('theme') === 'dark') {
+function applyTheme() {
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
         document.body.classList.add('dark-theme');
     }
+}
 
-    // Función para guardar la serie en el localStorage
-    function saveSeries(seriesTitle) {
-        let followedSeries = JSON.parse(localStorage.getItem('followedSeries')) || [];
-        if (!followedSeries.includes(seriesTitle)) {
-            followedSeries.push(seriesTitle);
-            localStorage.setItem('followedSeries', JSON.stringify(followedSeries));
+function followComic() {
+    localStorage.setItem('following', 'true');
+    applyFollowStatus();
+}
+
+function applyFollowStatus() {
+    const isFollowing = localStorage.getItem('following');
+    const followButton = document.querySelector('.follow-button');
+    if (isFollowing) {
+        followButton.textContent = 'Siguiendo';
+        followButton.disabled = true;
+    }
+}
+
+function searchChapters() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const chapterList = document.getElementById('chapterList');
+    const chapters = chapterList.getElementsByTagName('li');
+
+    for (let i = 0; i < chapters.length; i++) {
+        let chapter = chapters[i];
+        let textValue = chapter.textContent || chapter.innerText;
+        if (textValue.toLowerCase().indexOf(filter) > -1) {
+            chapter.style.display = "";
+        } else {
+            chapter.style.display = "none";
         }
     }
+}
 
-    // Comprobar si la serie ya está seguida
-    function checkIfFollowing(seriesTitle) {
-        let followedSeries = JSON.parse(localStorage.getItem('followedSeries')) || [];
-        if (followedSeries.includes(seriesTitle)) {
-            followButton.textContent = 'Siguiendo';
-            followButton.disabled = true;
-        }
+function generateChapters() {
+    const chapterList = document.getElementById('chapterList');
+    for (let i = 1; i <= 100; i++) {
+        let chapterItem = document.createElement('li');
+        chapterItem.innerHTML = `<a href="chapters/chapter${i}/">Capítulo ${i}: Título del capítulo</a>`;
+        chapterList.appendChild(chapterItem);
     }
-
-    // Verificar si la serie ya está seguida al cargar la página
-    checkIfFollowing(seriesTitle);
-});
+}
