@@ -46,14 +46,14 @@ body, html {
 }
 
 .main-content {
-    padding: 100px 20px 20px;
+    padding: 80px 10px 10px;
     text-align: center;
     position: relative;
     z-index: 0;
 }
 
 .chapter-content {
-    max-width: 1000px; /* Aumentar el tamaño máximo del contenedor */
+    max-width: 1000px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -63,6 +63,7 @@ body, html {
 
 .navigation {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -76,6 +77,8 @@ body, html {
     padding: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
+    flex: 1 1 auto;
+    margin: 5px;
 }
 
 .nav-button:hover {
@@ -97,14 +100,15 @@ body, html {
 }
 
 .images img {
-    width: 100%; /* Hacer que las imágenes ocupen todo el ancho del contenedor */
-    margin-bottom: 10px; /* Reducir el margen inferior para que las imágenes estén más juntas */
+    width: 100%;
+    margin-bottom: 10px;
     border-radius: 5px;
 }
 
 .chapter-navigation-bottom {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
@@ -114,7 +118,7 @@ body, html {
 
 @media (max-width: 768px) {
     .navigation h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
     .nav-button, .fullscreen-button {
@@ -129,6 +133,7 @@ body, html {
 
     .nav-button {
         width: 100%;
+        margin: 5px 0;
     }
 }
 
