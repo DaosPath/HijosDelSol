@@ -7,6 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     firstChapterButton.addEventListener('click', () => {
-        window.location.href = 'chapters/chapter1/';
+        window.location.href = 'chapters/chapter1.html';
     });
 });
