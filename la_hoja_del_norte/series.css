@@ -36,52 +36,70 @@ body, html {
 
 .comic-info {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
     background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     color: #fff;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
 }
 
 .comic-cover {
-    max-width: 200px;
+    width: 100%;
     border-radius: 10px;
-    margin: 20px;
+    margin-bottom: 15px;
 }
 
 .comic-details {
-    max-width: 600px;
-    text-align: left;
+    text-align: center;
 }
 
 .comic-details h1 {
-    font-size: 2.5em;
-    margin-bottom: 15px;
+    font-size: 1.5em;
+    margin-bottom: 10px;
     color: #ff6f61;
 }
 
-.comic-details .genre, .comic-details .description {
-    font-size: 1.2em;
+.comic-details .views-likes {
+    font-size: 0.9em;
     margin-bottom: 10px;
     color: #ddd;
 }
 
-.comic-details .first-chapter-button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #ff6f61;
-    color: #fff;
+.comic-details .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comic-details .follow-button, .comic-details .first-chapter-button {
+    padding: 8px 12px;
+    font-size: 0.9em;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
 }
 
-.comic-details .first-chapter-button:hover {
+.comic-details .follow-button {
+    background-color: #ff6f61;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.comic-details .follow-button:hover {
     background-color: #ff4a3d;
+}
+
+.comic-details .first-chapter-button {
+    background-color: #ffc107;
+    color: #fff;
+}
+
+.comic-details .first-chapter-button:hover {
+    background-color: #ffa000;
 }
 
 .chapter-list {
@@ -94,7 +112,7 @@ body, html {
 }
 
 .chapter-list h2 {
-    font-size: 2em;
+    font-size: 1.8em;
     margin-bottom: 20px;
     color: #ff6f61;
 }
