@@ -59,16 +59,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
+        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
     });
 
     // Establecer el tema oscuro si está almacenado en el localStorage
     if (localStorage.getItem('theme') === 'dark') {
         document.body.classList.add('dark-theme');
     }
-
-    document.body.addEventListener('classlistchange', () => {
-        localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
-    });
 
     // Función para guardar la serie en el localStorage
     function saveSeries(seriesTitle) {
