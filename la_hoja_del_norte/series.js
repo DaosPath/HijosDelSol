@@ -103,3 +103,20 @@ function generateChapters() {
         chapterList.appendChild(chapterItem);
     }
 }
+
+function openComments() {
+    const commentsPopup = document.getElementById('commentsPopup');
+    commentsPopup.classList.add('show');
+    if (!window.disqusLoaded) {
+        window.disqusLoaded = true;
+        var d = document, s = d.createElement('script');
+        s.src = 'https://hijosdelsol.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    }
+}
+
+function closeComments() {
+    const commentsPopup = document.getElementById('commentsPopup');
+    commentsPopup.classList.remove('show');
+}

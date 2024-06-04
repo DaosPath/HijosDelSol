@@ -28,11 +28,18 @@
                         <button class="follow-button" onclick="followComic()">+ Seguir</button>
                         <a href="chapters/chapter1/index.html" class="first-chapter-button">Primer capítulo</a>
                         <button class="like-button" onclick="likeComic()">Me gusta</button>
+                        <button class="comments-button" onclick="openComments()">Comentarios</button>
                     </div>
                 </div>
             </div>
         </div>
         <div id="popup" class="popup hidden">Historia Seguida</div>
+        <div id="commentsPopup" class="comments-popup hidden">
+            <div class="comments-popup-content">
+                <span class="close-comments" onclick="closeComments()">&times;</span>
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
         <div class="chapter-list">
             <h2>Capítulos</h2>
             <input type="text" class="search-input" id="searchInput" placeholder="Buscar capítulo..." onkeyup="searchChapters()">
@@ -51,5 +58,6 @@
         </div>
     </main>
     <script src="series.js"></script>
+    <script id="dsq-count-scr" src="//hijosdelsol.disqus.com/count.js" async></script>
 </body>
 </html>
