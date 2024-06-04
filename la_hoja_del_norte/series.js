@@ -2,10 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const followButton = document.querySelector('.follow-button');
     const firstChapterButton = document.querySelector('.first-chapter-button');
     const chapterList = document.getElementById('chapter-list');
+    const seriesTitle = document.querySelector('.comic-details h1').textContent;
 
     // Manejador de evento para el botón de seguir
     followButton.addEventListener('click', () => {
-        alert('Has seguido la serie.');
+        saveSeries(seriesTitle);
+        followButton.textContent = 'Siguiendo';
+        followButton.disabled = true;
     });
 
     // Manejador de evento para el botón del primer capítulo
@@ -66,4 +69,25 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.addEventListener('classlistchange', () => {
         localStorage.setItem('theme', document.body.classList.contains('dark-theme') ? 'dark' : 'light');
     });
+
+    // Función para guardar la serie en el localStorage
+    function saveSeries(seriesTitle) {
+        let followedSeries = JSON.parse(localStorage.getItem('followedSeries')) || [];
+        if (!followedSeries.includes(seriesTitle)) {
+            followedSeries.push(seriesTitle);
+            localStorage.setItem('followedSeries', JSON.stringify(followedSeries));
+        }
+    }
+
+    // Comprobar si la serie ya está seguida
+    function checkIfFollowing(seriesTitle) {
+        let followedSeries = JSON.parse(localStorage.getItem('followedSeries')) || [];
+        if (followedSeries.includes(seriesTitle)) {
+            followButton.textContent = 'Siguiendo';
+            followButton.disabled = true;
+        }
+    }
+
+    // Verificar si la serie ya está seguida al cargar la página
+    checkIfFollowing(seriesTitle);
 });

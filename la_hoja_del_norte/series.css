@@ -195,3 +195,8 @@ body, html {
 .dark-theme .header {
     background: linear-gradient(to bottom, rgba(34, 34, 34, 0.9), rgba(55, 55, 55, 0.9)), url('../recursos/fondo-encabezado.webp') no-repeat center center;
 }
+
+.follow-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
