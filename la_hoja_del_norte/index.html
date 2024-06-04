@@ -21,16 +21,18 @@
                 <img src="img/portada.jpg" alt="Portada de La Hoja del Norte" class="comic-cover">
                 <div class="comic-details">
                     <h1>La Hoja del Norte</h1>
-                    <p class="views-likes">8304700 vistas · 51389 me gusta</p>
+                    <p class="views-likes"><span id="viewsCount">0</span> vistas · <span id="likesCount">0</span> me gusta</p>
                     <p class="genre">Género: Aventura, Fantasía</p>
                     <p class="description">Sigue las aventuras de un joven guerrero en su búsqueda para encontrar la legendaria Hoja del Norte, una espada mítica que se dice otorga poderes inimaginables a su portador. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi vel consectetur interdum, nisl nisi dictum odio, a feugiat libero lorem vel nulla.</p>
                     <div class="buttons">
                         <button class="follow-button" onclick="followComic()">+ Seguir</button>
                         <a href="chapters/chapter1/index.html" class="first-chapter-button">Primer capítulo</a>
+                        <button class="like-button" onclick="likeComic()">Me gusta</button>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="popup" class="popup hidden">Historia Seguida</div>
         <div class="chapter-list">
             <h2>Capítulos</h2>
             <input type="text" class="search-input" id="searchInput" placeholder="Buscar capítulo..." onkeyup="searchChapters()">

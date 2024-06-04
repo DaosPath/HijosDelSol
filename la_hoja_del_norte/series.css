@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -13,6 +14,7 @@ body, html {
     transition: background 0.3s ease;
 }
 
+/* Header Styles */
 .header {
     position: fixed;
     width: 100%;
@@ -50,6 +52,7 @@ body, html {
     transform: scale(1.05);
 }
 
+/* Main Content Styles */
 .main-content {
     padding: 120px 20px 20px;
     text-align: center;
@@ -57,6 +60,7 @@ body, html {
     z-index: 0;
 }
 
+/* Comic Info Styles */
 .comic-info {
     display: flex;
     justify-content: center;
@@ -128,7 +132,7 @@ body, html {
     margin-bottom: 10px;
 }
 
-.follow-button, .first-chapter-button {
+.follow-button, .first-chapter-button, .like-button {
     padding: 10px 20px;
     font-size: 1em;
     border: none;
@@ -159,6 +163,16 @@ body, html {
     background-color: #ffcc00;
 }
 
+.like-button {
+    background-color: #4CAF50;
+    color: #fff;
+}
+
+.like-button:hover {
+    background-color: #45A049;
+}
+
+/* Chapter List Styles */
 .chapter-list {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
@@ -188,15 +202,15 @@ body, html {
     list-style: none;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
 }
 
 .chapter-list ul li {
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.1);
     border: 2px solid #ff6f61;
     border-radius: 10px;
+    padding: 10px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
     text-align: center;
 }
@@ -220,6 +234,7 @@ body, html {
     color: inherit;
 }
 
+/* Dark Theme Styles */
 .dark-theme {
     background: linear-gradient(to bottom, rgba(34, 34, 34, 0.8), rgba(55, 55, 55, 0.8)), url('../recursos/fondo-pagina-dark.webp') no-repeat center center fixed;
     color: #ffffff;
@@ -255,6 +270,30 @@ body, html {
     cursor: not-allowed;
 }
 
+/* Popup Styles */
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    z-index: 1001;
+    display: none;
+}
+
+.popup.show {
+    display: block;
+    animation: fadeInOut 2s ease;
+}
+
+@keyframes fadeInOut {
+    0%, 100% { opacity: 0; }
+    10%, 90% { opacity: 1; }
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
     .comic-info {
         flex-direction: column;
