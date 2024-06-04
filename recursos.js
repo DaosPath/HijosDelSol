@@ -31,9 +31,17 @@ document.querySelectorAll('.book-card, .comic-card').forEach(book => {
         modalTitle.textContent = book.getAttribute('data-title');
         modalAuthor.textContent = "Autor: " + book.getAttribute('data-author');
         modalDescription.textContent = book.getAttribute('data-description');
-        modalDownload.href = book.getAttribute('data-download');
         modalCover.src = book.getAttribute('data-cover');
-        modalLectura.href = `lectura.html?book=${book.getAttribute('data-download').split('/').pop()}`;
+
+        if (book.classList.contains('comic-card')) {
+            modalDownload.style.display = 'none'; // Ocultar el botón de descarga para cómics
+            modalLectura.href = book.getAttribute('data-lectura');
+        } else {
+            modalDownload.style.display = 'block'; // Mostrar el botón de descarga para libros
+            modalDownload.href = book.getAttribute('data-download');
+            modalLectura.href = `lectura.html?book=${book.getAttribute('data-download').split('/').pop()}`;
+        }
+
         modal.style.display = 'flex';
         modal.classList.remove('hidden');
     });
