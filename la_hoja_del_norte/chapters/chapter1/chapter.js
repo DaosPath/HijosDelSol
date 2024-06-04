@@ -11,6 +11,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const maxImages = 24; // Número máximo de imágenes a cargar
 
+    // Función para mostrar el GIF de carga
+    function showLoadingGif() {
+        const loadingGif = document.createElement('img');
+        loadingGif.src = '../../../recursos/loading.gif'; // Cambia la ruta al GIF de carga
+        loadingGif.classList.add('loading-gif');
+        imagesContainer.appendChild(loadingGif);
+        return loadingGif;
+    }
+
     // Cargar imágenes automáticamente
     let imageIndex = 1;
 
@@ -20,32 +29,34 @@ document.addEventListener('DOMContentLoaded', () => {
         const imagePath = `img/image${imageIndex}.jpg`;
         const img = new Image();
         img.src = imagePath;
+        const loadingGif = showLoadingGif();
         img.onload = () => {
+            imagesContainer.removeChild(loadingGif);
             imagesContainer.appendChild(img);
             imageIndex++;
             loadImage();
         };
         img.onerror = () => {
-            console.log(`No se pudo cargar la imagen: ${imagePath}`);
+            imagesContainer.removeChild(loadingGif);
         };
     }
 
     loadImage();
 
     prevButton.addEventListener('click', () => {
-        window.location.href = '../chapter0/index.html'; // Cambiar según la ruta del capítulo anterior
-    });
-
-    nextButton.addEventListener('click', () => {
-        window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
+        window.location.href = '../index.html'; // Cambiar según la ruta del capítulo anterior
     });
 
     prevButtonBottom.addEventListener('click', () => {
-        window.location.href = '../chapter0/index.html'; // Cambiar según la ruta del capítulo anterior
+        window.location.href = '../index.html'; // Cambiar según la ruta del capítulo anterior
+    });
+
+    nextButton.addEventListener('click', () => {
+        window.location.href = '../2/index.html'; // Cambiar según la ruta del siguiente capítulo
     });
 
     nextButtonBottom.addEventListener('click', () => {
-        window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
+        window.location.href = '../2/index.html'; // Cambiar según la ruta del siguiente capítulo
     });
 
     toggleThemeButton.addEventListener('click', () => {
