@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capítulo 1 - La Hoja del Norte</title>
+    <link rel="stylesheet" href="chapter.css">
+    <link rel="icon" type="image/png" href="../../recursos/icono.png">
+</head>
+<body>
+    <header class="header" id="header">
+        <a href="../../index.html">
+            <img src="../../recursos/logo.png" alt="Logo de Hijos del Sol">
+        </a>
+        <button class="toggle-theme-button" id="toggle-theme">Cambiar Tema</button>
+    </header>
+    <main class="main-content">
+        <div class="chapter-content">
+            <div class="navigation">
+                <button class="nav-button" id="prev-chapter">&lt; Capítulo Anterior</button>
+                <h1>Capítulo 1 - El Comienzo</h1>
+                <button class="nav-button" id="next-chapter">Capítulo Siguiente &gt;</button>
+                <button class="fullscreen-button" id="fullscreen-button">Pantalla Completa</button>
+            </div>
+            <div class="images" id="images-container">
+                <!-- Las imágenes se cargarán automáticamente aquí -->
+            </div>
+            <div class="chapter-navigation-bottom">
+                <button class="nav-button" id="prev-chapter-bottom">&lt; Capítulo Anterior</button>
+                <button class="nav-button" id="page-series">Página de Serie</button>
+                <button class="nav-button" id="next-chapter-bottom">Capítulo Siguiente &gt;</button>
+            </div>
+            <div class="comments-section">
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;
+                        this.page.identifier = window.location.pathname;
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://hijosdelsol.disqus.com/embed.js';
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Por favor, habilita JavaScript para ver los <a href="https://disqus.com/?ref_noscript">comentarios impulsados por Disqus.</a></noscript>
+            </div>
+        </div>
+    </main>
+    <script src="chapter.js"></script>
+</body>
+</html>
