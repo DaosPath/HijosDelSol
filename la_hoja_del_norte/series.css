@@ -6,7 +6,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../recursos/fondo-pagina.png') no-repeat center center fixed;
     background-size: cover;
 }
@@ -40,6 +40,10 @@ body, html {
     align-items: center;
     flex-wrap: wrap;
     margin-bottom: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    color: #fff;
 }
 
 .comic-cover {
@@ -56,27 +60,43 @@ body, html {
 .comic-details h1 {
     font-size: 2.5em;
     margin-bottom: 15px;
-    color: #333;
+    color: #ff6f61;
 }
 
 .comic-details .genre, .comic-details .description {
     font-size: 1.2em;
     margin-bottom: 10px;
-    color: #555;
+    color: #ddd;
+}
+
+.comic-details .first-chapter-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comic-details .first-chapter-button:hover {
+    background-color: #ff4a3d;
 }
 
 .chapter-list {
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
     border-radius: 10px;
     max-width: 800px;
     margin: 0 auto;
+    color: #fff;
 }
 
 .chapter-list h2 {
     font-size: 2em;
     margin-bottom: 20px;
-    color: #333;
+    color: #ff6f61;
 }
 
 .chapter-list ul {

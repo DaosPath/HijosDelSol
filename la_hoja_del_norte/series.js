@@ -15,4 +15,13 @@ document.addEventListener('DOMContentLoaded', function() {
         li.appendChild(a);
         chapterList.appendChild(li);
     });
+
+    const firstChapterButton = document.querySelector('.first-chapter-button');
+    if (chapters.length > 0) {
+        firstChapterButton.addEventListener('click', () => {
+            window.location.href = chapters[0].link;
+        });
+    } else {
+        firstChapterButton.style.display = 'none';
+    }
 });
