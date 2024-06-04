@@ -12,22 +12,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const isFirstChapter = true; // Cambiar a true si es el primer capítulo
     const isLastChapter = false; // Cambiar a true si es el último capítulo
+    const maxImages = 24; // Número máximo de imágenes a cargar
 
     // Cargar imágenes automáticamente
     let imageIndex = 1;
-    let imagesLoaded = false;
-    while (!imagesLoaded) {
+
+    function loadImage() {
+        if (imageIndex > maxImages) return;
+
         const imagePath = `img/image${imageIndex}.jpg`;
         const img = new Image();
         img.src = imagePath;
         img.onload = () => {
             imagesContainer.appendChild(img);
+            imageIndex++;
+            loadImage();
         };
         img.onerror = () => {
-            imagesLoaded = true;
+            console.log(`No se pudo cargar la imagen: ${imagePath}`);
         };
-        imageIndex++;
     }
+
+    loadImage();
 
     if (isFirstChapter) {
         prevButton.innerText = 'Página de Serie';
