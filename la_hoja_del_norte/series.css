@@ -6,7 +6,7 @@
 
 body, html {
     height: 100%;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Open Sans', sans-serif;
     background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../recursos/fondo-pagina.png') no-repeat center center fixed;
     background-size: cover;
 }
@@ -35,48 +35,37 @@ body, html {
 }
 
 .comic-info {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
     margin-bottom: 20px;
 }
 
 .comic-background {
-    position: relative;
-    width: 100%;
-    max-width: 1200px;
-    height: 450px;
-    background: url('img/portada.jpg') no-repeat center center;
-    background-size: cover;
-    border-radius: 10px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.comic-background::after {
-    content: '';
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
+    right: 0;
+    bottom: 0;
+    background: url('img/portada.jpg') no-repeat center center;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+    border-radius: 10px;
 }
 
 .comic-content {
     display: flex;
     align-items: center;
-    padding: 20px;
-    position: relative;
-    z-index: 1;
 }
 
 .comic-cover {
     width: 200px;
-    height: 300px;
+    height: auto;
     border-radius: 10px;
     margin-right: 20px;
 }
