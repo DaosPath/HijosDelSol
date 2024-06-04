@@ -7,12 +7,12 @@
 body, html {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
-    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../recursos/fondo-pagina.png') no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../recursos/fondo-pagina.webp') no-repeat center center fixed;
     background-size: cover;
 }
 
 .header {
-    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('../recursos/fondo-encabezado.png') no-repeat center center;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('../recursos/fondo-encabezado.webp') no-repeat center center;
     background-size: cover;
     padding: 10px 20px;
     display: flex;
@@ -36,35 +36,30 @@ body, html {
 
 .content-wrapper {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     background: rgba(0, 0, 0, 0.7);
     padding: 20px;
     border-radius: 10px;
     margin-bottom: 20px;
     width: 80%;
+    max-width: 1000px;
 }
 
-.left-panel {
-    flex: 1;
+.comic-info {
     display: flex;
-    justify-content: center;
     align-items: center;
-}
-
-.right-panel {
-    flex: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    color: #fff;
-    padding-left: 20px;
+    margin-bottom: 20px;
 }
 
 .comic-cover {
-    width: 100%;
-    max-width: 200px;
+    width: 150px;
     height: auto;
     border-radius: 10px;
+    margin-right: 20px;
+}
+
+.comic-details {
+    color: #fff;
 }
 
 .comic-details h1 {
@@ -116,9 +111,6 @@ body, html {
     background: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
-    max-width: 800px;
-    width: 80%;
-    margin: 0 auto;
     text-align: left;
 }
 
