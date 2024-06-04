@@ -10,7 +10,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('recursos/fondo.png') no-repeat center center fixed;
+    background: url('recursos/fondo.webp') no-repeat center center fixed;
     background-size: cover;
     background-color: #f0f0f0;
     flex-wrap: wrap; 
@@ -83,23 +83,23 @@ body.fade-out {
 }
 
 #sobre-nosotros {
-    background-image: url('recursos/fondo-hijosdelsol.png');
+    background-image: url('recursos/fondo-hijosdelsol.webp');
 }
 
 #ensenanzas {
-    background-image: url('recursos/fondo1.png');
+    background-image: url('recursos/fondo1.webp');
 }
 
 #eventos {
-    background-image: url('recursos/fondo2.png');
+    background-image: url('recursos/fondo2.webp');
 }
 
 #contacto {
-    background-image: url('recursos/fondo3.png');
+    background-image: url('recursos/fondo3.webp');
 }
 
 #recursos {
-    background-image: url('recursos/fondo4.png');
+    background-image: url('recursos/fondo4.webp');
 }
 
 h1, h2 {

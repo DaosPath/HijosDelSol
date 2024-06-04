@@ -9,7 +9,7 @@ body, html {
     height: 100%;
     font-family: 'Open Sans', sans-serif; 
     overflow-x: hidden;
-    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('recursos/fondo-pagina.png') no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('recursos/fondo-pagina.webp') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body, html {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('recursos/fondo-encabezado.png') no-repeat center center;
+    background: url('recursos/fondo-encabezado.webp') no-repeat center center;
     background-size: cover;
     filter: blur(2px); /* Reducción del desenfoque */
     z-index: -1;
