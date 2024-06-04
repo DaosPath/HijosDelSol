@@ -3,15 +3,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextButton = document.getElementById('next-chapter');
     const prevButtonBottom = document.getElementById('prev-chapter-bottom');
     const nextButtonBottom = document.getElementById('next-chapter-bottom');
-    const pageSeriesButton = document.getElementById('page-series');
     const toggleThemeButton = document.getElementById('toggle-theme');
     const fullscreenButton = document.getElementById('fullscreen-button');
     const body = document.body;
     const header = document.getElementById('header');
     const imagesContainer = document.getElementById('images-container');
 
-    const isFirstChapter = true; // Cambiar a true si es el primer capítulo
-    const isLastChapter = false; // Cambiar a true si es el último capítulo
     const maxImages = 24; // Número máximo de imágenes a cargar
 
     // Cargar imágenes automáticamente
@@ -35,44 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadImage();
 
-    if (isFirstChapter) {
-        prevButton.innerText = 'Página de Serie';
-        prevButtonBottom.innerText = 'Página de Serie';
-        prevButton.addEventListener('click', () => {
-            window.location.href = '../../index.html';
-        });
-        prevButtonBottom.addEventListener('click', () => {
-            window.location.href = '../../index.html';
-        });
-    } else {
-        prevButton.addEventListener('click', () => {
-            window.location.href = '../chapter1/index.html'; // Cambiar según la ruta del capítulo anterior
-        });
-        prevButtonBottom.addEventListener('click', () => {
-            window.location.href = '../chapter1/index.html'; // Cambiar según la ruta del capítulo anterior
-        });
-    }
+    prevButton.addEventListener('click', () => {
+        window.location.href = '../chapter0/index.html'; // Cambiar según la ruta del capítulo anterior
+    });
 
-    if (isLastChapter) {
-        nextButton.innerText = 'Página de Serie';
-        nextButtonBottom.innerText = 'Página de Serie';
-        nextButton.addEventListener('click', () => {
-            window.location.href = '../../index.html';
-        });
-        nextButtonBottom.addEventListener('click', () => {
-            window.location.href = '../../index.html';
-        });
-    } else {
-        nextButton.addEventListener('click', () => {
-            window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
-        });
-        nextButtonBottom.addEventListener('click', () => {
-            window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
-        });
-    }
+    nextButton.addEventListener('click', () => {
+        window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
+    });
 
-    pageSeriesButton.addEventListener('click', () => {
-        window.location.href = '../../index.html';
+    prevButtonBottom.addEventListener('click', () => {
+        window.location.href = '../chapter0/index.html'; // Cambiar según la ruta del capítulo anterior
+    });
+
+    nextButtonBottom.addEventListener('click', () => {
+        window.location.href = '../chapter2/index.html'; // Cambiar según la ruta del siguiente capítulo
     });
 
     toggleThemeButton.addEventListener('click', () => {
