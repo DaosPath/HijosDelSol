@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let isDarkTheme = false;
     let isPageByPage = false;
     let currentPage = 1;
-    const totalPages = 24;
+    const totalPages = 13;
 
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
