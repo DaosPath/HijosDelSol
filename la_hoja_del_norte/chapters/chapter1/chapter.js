@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('header');
     const imagesContainer = document.getElementById('images-container');
 
-    const maxImages = 24; // Número máximo de imágenes a cargar
+    const maxImages = 15; // Número máximo de imágenes a cargar
 
     // Función para mostrar el GIF de carga
     function showLoadingGif() {
