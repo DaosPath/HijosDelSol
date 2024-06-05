@@ -8,13 +8,13 @@ body, html {
     height: 100%;
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
-    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../../recursos/fondo-pagina.webp') no-repeat center center fixed;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.8), rgba(255, 182, 193, 0.8)), url('../../../recursos/fondo-pagina.webp') no-repeat center center fixed;
     background-size: cover;
 }
 
 .header {
     width: 100%;
-    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('../../recursos/fondo-encabezado.webp') no-repeat center center;
+    background: linear-gradient(to bottom, rgba(255, 223, 186, 0.9), rgba(255, 182, 193, 0.9)), url('../../../recursos/fondo-encabezado.webp') no-repeat center center;
     background-size: cover;
     padding: 10px 20px;
     display: flex;
@@ -31,7 +31,7 @@ body, html {
     height: 50px;
 }
 
-.toggle-theme-button {
+.toggle-theme-button, .page-by-page-button {
     padding: 10px 20px;
     background-color: #ff6f61;
     color: #fff;
@@ -39,9 +39,10 @@ body, html {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
+    margin-left: 10px;
 }
 
-.toggle-theme-button:hover {
+.toggle-theme-button:hover, .page-by-page-button:hover {
     background-color: #ff4a3d;
 }
 
@@ -147,7 +148,7 @@ body, html {
     color: #ffffff;
 }
 
-.dark-theme .nav-button, .dark-theme .fullscreen-button {
+.dark-theme .nav-button, .dark-theme .fullscreen-button, .dark-theme .page-by-page-button {
     background-color: #ff4a3d;
     color: #fff;
 }

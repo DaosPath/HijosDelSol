@@ -1,66 +1,55 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const prevButton = document.getElementById('prev-chapter');
-    const nextButton = document.getElementById('next-chapter');
-    const prevButtonBottom = document.getElementById('prev-chapter-bottom');
-    const nextButtonBottom = document.getElementById('next-chapter-bottom');
-    const toggleThemeButton = document.getElementById('toggle-theme');
-    const fullscreenButton = document.getElementById('fullscreen-button');
-    const body = document.body;
+document.addEventListener("DOMContentLoaded", function() {
     const header = document.getElementById('header');
+    const toggleThemeButton = document.getElementById('toggle-theme');
     const imagesContainer = document.getElementById('images-container');
-
-    const maxImages = 15; // Número máximo de imágenes a cargar
-
-    // Función para mostrar el GIF de carga
-    function showLoadingGif() {
-        const loadingGif = document.createElement('img');
-        loadingGif.src = '../../../recursos/loading.gif'; // Cambia la ruta al GIF de carga
-        loadingGif.classList.add('loading-gif');
-        imagesContainer.appendChild(loadingGif);
-        return loadingGif;
-    }
-
-    // Cargar imágenes automáticamente
-    let imageIndex = 1;
-
-    function loadImage() {
-        if (imageIndex > maxImages) return;
-
-        const imagePath = `img/image${imageIndex}.jpg`;
-        const img = new Image();
-        img.src = imagePath;
-        const loadingGif = showLoadingGif();
-        img.onload = () => {
-            imagesContainer.removeChild(loadingGif);
-            imagesContainer.appendChild(img);
-            imageIndex++;
-            loadImage();
-        };
-        img.onerror = () => {
-            imagesContainer.removeChild(loadingGif);
-        };
-    }
-
-    loadImage();
-
-    prevButton.addEventListener('click', () => {
-        window.location.href = '../index.html'; // Cambiar según la ruta del capítulo anterior
-    });
-
-    prevButtonBottom.addEventListener('click', () => {
-        window.location.href = '../index.html'; // Cambiar según la ruta del capítulo anterior
-    });
-
-    nextButton.addEventListener('click', () => {
-        window.location.href = '../2/index.html'; // Cambiar según la ruta del siguiente capítulo
-    });
-
-    nextButtonBottom.addEventListener('click', () => {
-        window.location.href = '../2/index.html'; // Cambiar según la ruta del siguiente capítulo
-    });
+    const prevChapterButton = document.getElementById('prev-chapter');
+    const nextChapterButton = document.getElementById('next-chapter');
+    const fullscreenButton = document.getElementById('fullscreen-button');
+    const prevChapterButtonBottom = document.getElementById('prev-chapter-bottom');
+    const nextChapterButtonBottom = document.getElementById('next-chapter-bottom');
+    const pageByPageButton = document.getElementById('page-by-page-button');
+    const prevPageButton = document.getElementById('prev-page');
+    const nextPageButton = document.getElementById('next-page');
+    
+    let isDarkTheme = false;
+    let isPageByPage = false;
+    let currentPage = 1;
+    const totalPages = 24;
 
     toggleThemeButton.addEventListener('click', () => {
-        body.classList.toggle('dark-theme');
+        document.body.classList.toggle('dark-theme');
+        isDarkTheme = !isDarkTheme;
+        toggleThemeButton.textContent = isDarkTheme ? 'Cambiar a Tema Claro' : 'Cambiar a Tema Oscuro';
+    });
+
+    function loadImages() {
+        clearImages();
+        const maxPagesToLoad = isPageByPage ? 1 : totalPages;
+        for (let i = currentPage; i < currentPage + maxPagesToLoad && i <= totalPages; i++) {
+            const img = document.createElement('img');
+            img.src = `img/image${i}.jpg`;
+            imagesContainer.appendChild(img);
+        }
+    }
+
+    function clearImages() {
+        while (imagesContainer.firstChild) {
+            imagesContainer.removeChild(imagesContainer.firstChild);
+        }
+    }
+
+    function updateNavigationButtons() {
+        prevPageButton.style.display = currentPage === 1 ? 'none' : 'inline-block';
+        nextPageButton.style.display = currentPage >= totalPages ? 'none' : 'inline-block';
+    }
+
+    pageByPageButton.addEventListener('click', () => {
+        isPageByPage = !isPageByPage;
+        pageByPageButton.textContent = isPageByPage ? 'Leer Todas las Páginas' : 'Leer Página por Página';
+        currentPage = 1;
+        clearImages();
+        loadImages();
+        updateNavigationButtons();
     });
 
     fullscreenButton.addEventListener('click', () => {
@@ -73,14 +62,40 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    let lastScrollTop = 0;
-    window.addEventListener('scroll', () => {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop) {
-            header.style.top = '-70px';
-        } else {
-            header.style.top = '0';
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
+    prevChapterButton.addEventListener('click', () => {
+        window.location.href = '../chapter0/index.html';
     });
+
+    nextChapterButton.addEventListener('click', () => {
+        window.location.href = '../chapter2/index.html';
+    });
+
+    prevChapterButtonBottom.addEventListener('click', () => {
+        window.location.href = '../chapter0/index.html';
+    });
+
+    nextChapterButtonBottom.addEventListener('click', () => {
+        window.location.href = '../chapter2/index.html';
+    });
+
+    prevPageButton.addEventListener('click', () => {
+        if (currentPage > 1) {
+            currentPage--;
+            clearImages();
+            loadImages();
+            updateNavigationButtons();
+        }
+    });
+
+    nextPageButton.addEventListener('click', () => {
+        if (currentPage < totalPages) {
+            currentPage++;
+            clearImages();
+            loadImages();
+            updateNavigationButtons();
+        }
+    });
+
+    loadImages();
+    updateNavigationButtons();
 });
