@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
     let isDarkTheme = false;
     let isPageByPage = false;
     let currentPage = 1;
-    const totalPages = 13;
+    const totalPages = 11;
 
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const maxPagesToLoad = isPageByPage ? 1 : totalPages;
         for (let i = currentPage; i < currentPage + maxPagesToLoad && i <= totalPages; i++) {
             const img = document.createElement('img');
-            img.src = `img/image${i}.jpg`;
+            img.src = `img/image${i}.webp`;
             imagesContainer.appendChild(img);
         }
     }
