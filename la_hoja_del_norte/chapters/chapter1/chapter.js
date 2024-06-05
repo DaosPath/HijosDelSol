@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadImage() {
         if (imageIndex > maxImages) return;
 
-        const imagePath = `img/image${imageIndex}.jpg`;
+        const imagePath = `img/image${imageIndex}.jpeg`;
         const img = new Image();
         img.src = imagePath;
         const loadingGif = showLoadingGif();
