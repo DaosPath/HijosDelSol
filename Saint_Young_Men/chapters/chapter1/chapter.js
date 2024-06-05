@@ -10,6 +10,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const pageByPageButton = document.getElementById('page-by-page-button');
     const prevPageButton = document.getElementById('prev-page');
     const nextPageButton = document.getElementById('next-page');
+    const chapterSelect = document.getElementById('chapter-select');
+    const pageSelect = document.getElementById('page-select');
     
     let isDarkTheme = false;
     let isPageByPage = false;
@@ -19,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         isDarkTheme = !isDarkTheme;
-        toggleThemeButton.textContent = isDarkTheme ? 'Cambiar a Tema Claro' : 'Cambiar a Tema Oscuro';
+        toggleThemeButton.textContent = 'Cambiar Tema';
     });
 
     function loadImages() {
@@ -30,11 +32,25 @@ document.addEventListener("DOMContentLoaded", function() {
             img.src = `img/image${i}.webp`;
             imagesContainer.appendChild(img);
         }
+        updatePageSelect();
     }
 
     function clearImages() {
         while (imagesContainer.firstChild) {
             imagesContainer.removeChild(imagesContainer.firstChild);
+        }
+    }
+
+    function updatePageSelect() {
+        pageSelect.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            if (i === currentPage) {
+                option.selected = true;
+            }
+            pageSelect.appendChild(option);
         }
     }
 
@@ -93,6 +109,22 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
+        }
+    });
+
+    pageSelect.addEventListener('change', () => {
+        currentPage = parseInt(pageSelect.value);
+        clearImages();
+        loadImages();
+        updateNavigationButtons();
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight' || event.key === 'd') {
+            nextPageButton.click();
+        }
+        if (event.key === 'ArrowLeft' || event.key === 'a') {
+            prevPageButton.click();
         }
     });
 

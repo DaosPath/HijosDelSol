@@ -17,9 +17,9 @@
     <main class="main-content">
         <div class="chapter-content">
             <div class="navigation">
-                <button class="nav-button" id="prev-chapter">&lt; Capítulo Anterior</button>
+                <button class="nav-button chapter-nav" id="prev-chapter">&lt;</button>
                 <h1>Capítulo 1 - El día libre de Buda</h1>
-                <button class="nav-button" id="next-chapter">Capítulo Siguiente &gt;</button>
+                <button class="nav-button chapter-nav" id="next-chapter">&gt;</button>
                 <button class="fullscreen-button" id="fullscreen-button">Pantalla Completa</button>
                 <button class="page-by-page-button" id="page-by-page-button">Leer Página por Página</button>
             </div>
@@ -27,12 +27,19 @@
                 <!-- Las imágenes se cargarán automáticamente aquí -->
             </div>
             <div class="chapter-navigation-bottom">
-                <button class="nav-button" id="prev-page">&lt; Página Anterior</button>
-                <button class="nav-button" id="next-page">Página Siguiente &gt;</button>
+                <button class="nav-button page-nav" id="prev-page">&lt;</button>
+                <select id="chapter-select" class="select-nav">
+                    <option value="chapter1">Capítulo 1</option>
+                    <option value="chapter2">Capítulo 2</option>
+                </select>
+                <select id="page-select" class="select-nav">
+                    <!-- Opciones de páginas se cargarán aquí -->
+                </select>
+                <button class="nav-button page-nav" id="next-page">&gt;</button>
             </div>
             <div class="chapter-navigation-bottom">
-                <button class="nav-button" id="prev-chapter-bottom">&lt; Capítulo Anterior</button>
-                <button class="nav-button" id="next-chapter-bottom">Capítulo Siguiente &gt;</button>
+                <button class="nav-button chapter-nav" id="prev-chapter-bottom">&lt;</button>
+                <button class="nav-button chapter-nav" id="next-chapter-bottom">&gt;</button>
             </div>
             <div class="comments-section">
                 <div id="disqus_thread"></div>

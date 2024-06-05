@@ -82,7 +82,19 @@ body, html {
     margin: 5px;
 }
 
-.nav-button:hover {
+.chapter-nav {
+    background-color: #4a90e2;
+}
+
+.chapter-nav:hover {
+    background-color: #357ab7;
+}
+
+.page-nav {
+    background-color: #ff6f61;
+}
+
+.page-nav:hover {
     background-color: #ff4a3d;
 }
 
@@ -111,6 +123,14 @@ body, html {
     justify-content: space-between;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+
+.select-nav {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    margin: 5px;
 }
 
 .comments-section {
@@ -151,6 +171,22 @@ body, html {
 .dark-theme .nav-button, .dark-theme .fullscreen-button, .dark-theme .page-by-page-button {
     background-color: #ff4a3d;
     color: #fff;
+}
+
+.dark-theme .chapter-nav {
+    background-color: #357ab7;
+}
+
+.dark-theme .chapter-nav:hover {
+    background-color: #4a90e2;
+}
+
+.dark-theme .page-nav {
+    background-color: #ff6f61;
+}
+
+.dark-theme .page-nav:hover {
+    background-color: #ff4a3d;
 }
 
 .dark-theme .toggle-theme-button {
