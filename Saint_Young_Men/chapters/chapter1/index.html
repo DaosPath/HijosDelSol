@@ -20,20 +20,20 @@
                 <button class="nav-button chapter-nav" id="prev-chapter">&lt;</button>
                 <h1>Capítulo 1 - El día libre de Buda</h1>
                 <button class="nav-button chapter-nav" id="next-chapter">&gt;</button>
-                <button class="fullscreen-button" id="fullscreen-button">Pantalla Completa</button>
-                <button class="page-by-page-button" id="page-by-page-button">Leer Página por Página</button>
+                <select id="chapter-select" class="chapter-select">
+                    <option value="1">Capítulo 1</option>
+                    <option value="2">Capítulo 2</option>
+                </select>
+                <button class="nav-button fullscreen-button" id="fullscreen-button"><img src="../../../recursos/fullscreen-icon.png" alt="Pantalla Completa"></button>
+                <button class="nav-button" id="page-by-page-button">Cascada</button>
             </div>
             <div class="images" id="images-container">
                 <!-- Las imágenes se cargarán automáticamente aquí -->
             </div>
             <div class="chapter-navigation-bottom">
                 <button class="nav-button page-nav" id="prev-page">&lt;</button>
-                <select id="chapter-select" class="select-nav">
-                    <option value="chapter1">Capítulo 1</option>
-                    <option value="chapter2">Capítulo 2</option>
-                </select>
-                <select id="page-select" class="select-nav">
-                    <!-- Opciones de páginas se cargarán aquí -->
+                <select id="page-select" class="page-select">
+                    <!-- Las opciones se rellenarán dinámicamente -->
                 </select>
                 <button class="nav-button page-nav" id="next-page">&gt;</button>
             </div>

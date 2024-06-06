@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextPageButton = document.getElementById('next-page');
     const chapterSelect = document.getElementById('chapter-select');
     const pageSelect = document.getElementById('page-select');
-    
+
     let isDarkTheme = false;
     let isPageByPage = false;
     let currentPage = 1;
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         isDarkTheme = !isDarkTheme;
-        toggleThemeButton.textContent = 'Cambiar Tema';
+        toggleThemeButton.textContent = isDarkTheme ? 'Cambiar Tema' : 'Cambiar Tema';
     });
 
     function loadImages() {
@@ -32,25 +32,11 @@ document.addEventListener("DOMContentLoaded", function() {
             img.src = `img/image${i}.webp`;
             imagesContainer.appendChild(img);
         }
-        updatePageSelect();
     }
 
     function clearImages() {
         while (imagesContainer.firstChild) {
             imagesContainer.removeChild(imagesContainer.firstChild);
-        }
-    }
-
-    function updatePageSelect() {
-        pageSelect.innerHTML = '';
-        for (let i = 1; i <= totalPages; i++) {
-            const option = document.createElement('option');
-            option.value = i;
-            option.textContent = i;
-            if (i === currentPage) {
-                option.selected = true;
-            }
-            pageSelect.appendChild(option);
         }
     }
 
@@ -61,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     pageByPageButton.addEventListener('click', () => {
         isPageByPage = !isPageByPage;
-        pageByPageButton.textContent = isPageByPage ? 'Leer Todas las Páginas' : 'Leer Página por Página';
+        pageByPageButton.textContent = isPageByPage ? 'Cascada' : 'Por Página';
         currentPage = 1;
         clearImages();
         loadImages();
@@ -100,6 +86,7 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
 
@@ -109,25 +96,32 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     });
 
-    pageSelect.addEventListener('change', () => {
-        currentPage = parseInt(pageSelect.value);
+    chapterSelect.addEventListener('change', (event) => {
+        const selectedChapter = event.target.value;
+        window.location.href = `../chapter${selectedChapter}/index.html`;
+    });
+
+    function fillPageSelect() {
+        for (let i = 1; i <= totalPages; i++) {
+            const option = document.createElement('option');
+            option.value = i;
+            option.textContent = i;
+            pageSelect.appendChild(option);
+        }
+    }
+
+    pageSelect.addEventListener('change', (event) => {
+        currentPage = parseInt(event.target.value);
         clearImages();
         loadImages();
         updateNavigationButtons();
     });
 
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'ArrowRight' || event.key === 'd') {
-            nextPageButton.click();
-        }
-        if (event.key === 'ArrowLeft' || event.key === 'a') {
-            prevPageButton.click();
-        }
-    });
-
     loadImages();
+    fillPageSelect();
     updateNavigationButtons();
 });

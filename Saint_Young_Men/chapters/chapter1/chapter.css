@@ -31,7 +31,7 @@ body, html {
     height: 50px;
 }
 
-.toggle-theme-button, .page-by-page-button {
+.toggle-theme-button {
     padding: 10px 20px;
     background-color: #ff6f61;
     color: #fff;
@@ -42,7 +42,7 @@ body, html {
     margin-left: 10px;
 }
 
-.toggle-theme-button:hover, .page-by-page-button:hover {
+.toggle-theme-button:hover {
     background-color: #ff4a3d;
 }
 
@@ -78,38 +78,16 @@ body, html {
     padding: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
-    flex: 1 1 auto;
     margin: 5px;
 }
 
-.chapter-nav {
-    background-color: #4a90e2;
-}
-
-.chapter-nav:hover {
-    background-color: #357ab7;
-}
-
-.page-nav {
-    background-color: #ff6f61;
-}
-
-.page-nav:hover {
+.nav-button:hover {
     background-color: #ff4a3d;
 }
 
-.fullscreen-button {
-    background-color: #ff6f61;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.fullscreen-button:hover {
-    background-color: #ff4a3d;
+.fullscreen-button img {
+    width: 20px;
+    height: 20px;
 }
 
 .images img {
@@ -125,16 +103,18 @@ body, html {
     margin-top: 20px;
 }
 
-.select-nav {
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: #fff;
-    margin: 5px;
-}
-
 .comments-section {
     margin-top: 40px;
+}
+
+.chapter-select, .page-select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    color: #333;
+    font-size: 1em;
+    margin: 5px;
 }
 
 @media (max-width: 768px) {
@@ -156,6 +136,11 @@ body, html {
         width: 100%;
         margin: 5px 0;
     }
+
+    .chapter-select, .page-select {
+        width: 100%;
+        margin: 5px 0;
+    }
 }
 
 .dark-theme {
@@ -173,22 +158,6 @@ body, html {
     color: #fff;
 }
 
-.dark-theme .chapter-nav {
-    background-color: #357ab7;
-}
-
-.dark-theme .chapter-nav:hover {
-    background-color: #4a90e2;
-}
-
-.dark-theme .page-nav {
-    background-color: #ff6f61;
-}
-
-.dark-theme .page-nav:hover {
-    background-color: #ff4a3d;
-}
-
 .dark-theme .toggle-theme-button {
     background-color: #ff4a3d;
     color: #fff;
@@ -197,4 +166,10 @@ body, html {
 .dark-theme .header {
     background: linear-gradient(to bottom, rgba(34, 34, 34, 0.9), rgba(55, 55, 55, 0.9));
     color: #fff;
+}
+
+.dark-theme .chapter-select, .dark-theme .page-select {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
 }
