@@ -39,7 +39,6 @@ body, html {
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-left: 10px;
 }
 
 .toggle-theme-button:hover {
@@ -64,7 +63,6 @@ body, html {
 
 .navigation {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
@@ -78,16 +76,55 @@ body, html {
     padding: 10px;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin: 5px;
+    margin: 0 5px;
 }
 
 .nav-button:hover {
     background-color: #ff4a3d;
 }
 
+.chapter-nav {
+    background-color: #ff6f61;
+}
+
+.chapter-nav:hover {
+    background-color: #ff4a3d;
+}
+
+.page-nav {
+    background-color: #4caf50;
+}
+
+.page-nav:hover {
+    background-color: #388e3c;
+}
+
+.fullscreen-button {
+    background-color: #ff6f61;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-left: 5px;
+}
+
 .fullscreen-button img {
     width: 20px;
     height: 20px;
+}
+
+.fullscreen-button:hover {
+    background-color: #ff4a3d;
+}
+
+.select-chapter, .select-page {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 0 5px;
 }
 
 .images img {
@@ -98,23 +135,13 @@ body, html {
 
 .chapter-navigation-bottom {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     flex-wrap: wrap;
     margin-top: 20px;
 }
 
 .comments-section {
     margin-top: 40px;
-}
-
-.chapter-select, .page-select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background: #fff;
-    color: #333;
-    font-size: 1em;
-    margin: 5px;
 }
 
 @media (max-width: 768px) {
@@ -136,11 +163,6 @@ body, html {
         width: 100%;
         margin: 5px 0;
     }
-
-    .chapter-select, .page-select {
-        width: 100%;
-        margin: 5px 0;
-    }
 }
 
 .dark-theme {
@@ -153,7 +175,7 @@ body, html {
     color: #ffffff;
 }
 
-.dark-theme .nav-button, .dark-theme .fullscreen-button, .dark-theme .page-by-page-button {
+.dark-theme .nav-button, .dark-theme .fullscreen-button {
     background-color: #ff4a3d;
     color: #fff;
 }
@@ -166,10 +188,4 @@ body, html {
 .dark-theme .header {
     background: linear-gradient(to bottom, rgba(34, 34, 34, 0.9), rgba(55, 55, 55, 0.9));
     color: #fff;
-}
-
-.dark-theme .chapter-select, .dark-theme .page-select {
-    background: #333;
-    color: #fff;
-    border: 1px solid #555;
 }

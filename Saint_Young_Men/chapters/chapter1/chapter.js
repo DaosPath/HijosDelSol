@@ -5,23 +5,20 @@ document.addEventListener("DOMContentLoaded", function() {
     const prevChapterButton = document.getElementById('prev-chapter');
     const nextChapterButton = document.getElementById('next-chapter');
     const fullscreenButton = document.getElementById('fullscreen-button');
-    const prevChapterButtonBottom = document.getElementById('prev-chapter-bottom');
-    const nextChapterButtonBottom = document.getElementById('next-chapter-bottom');
-    const pageByPageButton = document.getElementById('page-by-page-button');
     const prevPageButton = document.getElementById('prev-page');
     const nextPageButton = document.getElementById('next-page');
     const chapterSelect = document.getElementById('chapter-select');
     const pageSelect = document.getElementById('page-select');
 
     let isDarkTheme = false;
-    let isPageByPage = false;
     let currentPage = 1;
-    const totalPages = 11;
+    const totalPages = 11; // Puedes cambiar esto según sea necesario
+    const isPageByPage = true; // Cambia esto a `false` si quieres usar el modo cascada
 
     toggleThemeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-theme');
         isDarkTheme = !isDarkTheme;
-        toggleThemeButton.textContent = isDarkTheme ? 'Cambiar Tema' : 'Cambiar Tema';
+        toggleThemeButton.textContent = 'Cambiar Tema';
     });
 
     function loadImages() {
@@ -43,16 +40,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function updateNavigationButtons() {
         prevPageButton.style.display = currentPage === 1 ? 'none' : 'inline-block';
         nextPageButton.style.display = currentPage >= totalPages ? 'none' : 'inline-block';
+        pageSelect.value = currentPage;
     }
-
-    pageByPageButton.addEventListener('click', () => {
-        isPageByPage = !isPageByPage;
-        pageByPageButton.textContent = isPageByPage ? 'Cascada' : 'Por Página';
-        currentPage = 1;
-        clearImages();
-        loadImages();
-        updateNavigationButtons();
-    });
 
     fullscreenButton.addEventListener('click', () => {
         if (!document.fullscreenElement) {
@@ -72,21 +61,13 @@ document.addEventListener("DOMContentLoaded", function() {
         window.location.href = '../chapter2/index.html';
     });
 
-    prevChapterButtonBottom.addEventListener('click', () => {
-        window.location.href = '../chapter0/index.html';
-    });
-
-    nextChapterButtonBottom.addEventListener('click', () => {
-        window.location.href = '../chapter2/index.html';
-    });
-
     prevPageButton.addEventListener('click', () => {
         if (currentPage > 1) {
             currentPage--;
             clearImages();
             loadImages();
             updateNavigationButtons();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollToTop();
         }
     });
 
@@ -96,16 +77,15 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            scrollToTop();
         }
     });
 
-    chapterSelect.addEventListener('change', (event) => {
-        const selectedChapter = event.target.value;
-        window.location.href = `../chapter${selectedChapter}/index.html`;
-    });
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-    function fillPageSelect() {
+    function populatePageSelect() {
         for (let i = 1; i <= totalPages; i++) {
             const option = document.createElement('option');
             option.value = i;
@@ -115,13 +95,27 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     pageSelect.addEventListener('change', (event) => {
-        currentPage = parseInt(event.target.value);
+        currentPage = parseInt(event.target.value, 10);
         clearImages();
         loadImages();
         updateNavigationButtons();
+        scrollToTop();
     });
 
+    chapterSelect.addEventListener('change', (event) => {
+        const selectedChapter = event.target.value;
+        window.location.href = `../chapter${selectedChapter}/index.html`;
+    });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowLeft' || event.key === 'a') {
+            prevPageButton.click();
+        } else if (event.key === 'ArrowRight' || event.key === 'd') {
+            nextPageButton.click();
+        }
+    });
+
+    populatePageSelect();
     loadImages();
-    fillPageSelect();
     updateNavigationButtons();
 });
