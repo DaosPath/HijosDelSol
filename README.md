@@ -1,7 +1,7 @@
 
 # Hijos del Sol
 
-Bienvenido al repositorio del proyecto web 'Hijos del Sol'. Este proyecto es una página web para los 'Hijos del Sol', donde los usuarios pueden acceder a diversos recursos, leer sobre las enseñanzas y conectarse con la comunidad.
+Bienvenido al repositorio del proyecto web 'Hijos del Sol'. Este proyecto es una página web para la secta taoísta 'Hijos del Sol', donde los usuarios pueden acceder a diversos recursos, leer sobre las enseñanzas y conectarse con la comunidad.
 
 ## Estructura del Proyecto
 
