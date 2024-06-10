@@ -67,8 +67,8 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
-            scrollToTop();
         }
+        scrollToTop();
     });
 
     nextPageButton.addEventListener('click', () => {
@@ -77,8 +77,8 @@ document.addEventListener("DOMContentLoaded", function() {
             clearImages();
             loadImages();
             updateNavigationButtons();
-            scrollToTop();
         }
+        scrollToTop();
     });
 
     function scrollToTop() {
