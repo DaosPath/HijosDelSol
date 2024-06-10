@@ -25,18 +25,17 @@
                     <p class="description">Saint Young Men es un manga de comedia y Slice of Life creado por Hikaru Nakamura. La historia sigue a Jesús Cristo y Gautama Buda, quienes deciden tomarse unas vacaciones y viven juntos en un modesto apartamento en Tokio. En su tiempo libre, exploran la vida moderna y enfrentan situaciones cotidianas de manera humorística, ofreciendo una visión cómica y reflexiva sobre la espiritualidad y la cultura contemporánea. La serie ha sido galardonada con el Premio Cultural Osamu Tezuka y es conocida por su tratamiento respetuoso y entretenido de figuras religiosas.</p>
                     <div class="buttons">
                         <a href="chapters/chapter1/index.html" class="first-chapter-button">Primer capítulo</a>
-                        <button class="comments-button" onclick="openComments()">Comentarios</button>
+                        <button class="comments-button" onclick="toggleComments()">Comentarios</button>
                     </div>
                 </div>
             </div>
         </div>
-        <div id="commentsPopup" class="comments-popup hidden">
-            <div class="comments-popup-content">
-                <span class="close-comments" onclick="closeComments()">&times;</span>
+        <div id="commentsContainer" class="comments-container hidden">
+            <div class="comments-content">
                 <div id="disqus_thread"></div>
             </div>
         </div>
-        <div class="chapter-list">
+        <div id="chapterListContainer" class="chapter-list">
             <h2>Capítulos</h2>
             <input type="text" class="search-input" id="searchInput" placeholder="Buscar capítulo..." onkeyup="searchChapters()">
             <ul id="chapterList">

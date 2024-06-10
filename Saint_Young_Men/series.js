@@ -45,24 +45,31 @@ function normalizeText(text) {
     return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
-function openComments() {
-    const commentsPopup = document.getElementById('commentsPopup');
-    commentsPopup.classList.add('show');
-    if (!window.disqusLoaded) {
-        window.disqusLoaded = true;
-        var d = document, s = d.createElement('script');
-        s.src = 'https://hijosdelsol.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
+function toggleComments() {
+    const chapterListContainer = document.getElementById('chapterListContainer');
+    const commentsContainer = document.getElementById('commentsContainer');
+    const commentsButton = document.querySelector('.comments-button');
+    const isCommentsVisible = commentsContainer.classList.contains('show');
+    
+    if (isCommentsVisible) {
+        commentsContainer.classList.remove('show');
+        chapterListContainer.classList.add('show');
+        commentsButton.textContent = 'Comentarios';
+    } else {
+        commentsContainer.classList.add('show');
+        chapterListContainer.classList.remove('show');
+        commentsButton.textContent = 'Capítulos';
+        
+        if (!window.disqusLoaded) {
+            window.disqusLoaded = true;
+            var d = document, s = d.createElement('script');
+            s.src = 'https://hijosdelsol.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        }
     }
 }
 
-function closeComments() {
-    const commentsPopup = document.getElementById('commentsPopup');
-    commentsPopup.classList.remove('show');
-}
-
-// Add event listeners to the chapter list items
 document.querySelectorAll('.chapter-list ul li').forEach(item => {
     item.addEventListener('click', () => {
         window.location.href = item.querySelector('a').href;
