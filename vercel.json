@@ -6,5 +6,8 @@
     { "source": "/politicas/comentarios", "destination": "/Politicas/Comentarios/comments-policy.html" },
     { "source": "/Saint_Young_Men", "destination": "/Saint_Young_Men/index.html" },
     { "source": "/Saint_Young_Men/capitulo-1", "destination": "/Saint_Young_Men/chapters/chapter1/index.html" }
-  ]
+  ],
+  "error": {
+    "404": "/404.html"
+  }
 }
