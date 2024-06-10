@@ -118,6 +118,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.addEventListener('touchstart', handleTouchStart, false);
     document.addEventListener('touchmove', handleTouchMove, false);
 
+    imagesContainer.addEventListener('click', handleImageClick);
+
     let xDown = null;
 
     function handleTouchStart(evt) {
@@ -141,6 +143,17 @@ document.addEventListener("DOMContentLoaded", function() {
             prevPageButton.click();
         }
         xDown = null;
+    }
+
+    function handleImageClick(event) {
+        const clickX = event.clientX;
+        const screenWidth = window.innerWidth;
+
+        if (clickX < screenWidth / 2) {
+            prevPageButton.click();
+        } else {
+            nextPageButton.click();
+        }
     }
 
     populatePageSelect();
