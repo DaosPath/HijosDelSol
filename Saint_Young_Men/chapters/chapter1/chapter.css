@@ -150,18 +150,19 @@ body, html {
     }
 
     .nav-button, .fullscreen-button {
-        padding: 5px;
-        font-size: 0.8em;
+        padding: 10px;
+        font-size: 1em;
+        margin: 0 5px;
     }
 
     .chapter-navigation-bottom {
-        flex-direction: column;
-        gap: 10px;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: nowrap;
     }
 
-    .nav-button {
-        width: 100%;
-        margin: 5px 0;
+    .nav-button, .select-chapter, .select-page {
+        margin: 0 5px;
     }
 }
 
