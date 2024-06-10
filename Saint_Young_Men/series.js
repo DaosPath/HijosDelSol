@@ -57,3 +57,10 @@ function closeComments() {
     const commentsPopup = document.getElementById('commentsPopup');
     commentsPopup.classList.remove('show');
 }
+
+// Add event listeners to the chapter list items
+document.querySelectorAll('.chapter-list ul li').forEach(item => {
+    item.addEventListener('click', () => {
+        window.location.href = item.querySelector('a').href;
+    });
+});

@@ -201,6 +201,7 @@ body, html {
     padding: 20px;
     transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
     text-align: center;
+    cursor: pointer;
 }
 
 .chapter-list ul li:hover {
