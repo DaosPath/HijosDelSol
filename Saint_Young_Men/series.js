@@ -26,19 +26,23 @@ function incrementViews() {
 
 function searchChapters() {
     const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
+    const filter = normalizeText(input.value.toLowerCase());
     const chapterList = document.getElementById('chapterList');
     const chapters = chapterList.getElementsByTagName('li');
 
     for (let i = 0; i < chapters.length; i++) {
         let chapter = chapters[i];
-        let textValue = chapter.textContent || chapter.innerText;
+        let textValue = normalizeText(chapter.textContent || chapter.innerText);
         if (textValue.toLowerCase().indexOf(filter) > -1) {
             chapter.style.display = "";
         } else {
             chapter.style.display = "none";
         }
     }
+}
+
+function normalizeText(text) {
+    return text.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
 }
 
 function openComments() {
