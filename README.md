@@ -52,7 +52,7 @@ Si deseas contribuir al proyecto, por favor sigue estos pasos:
 
 ## Licencia
 
-Este proyecto está bajo la Licencia Pública de Eclipse (EPL). Ver el archivo [LICENSE](LICENSE) para más detalles.
+Este proyecto está bajo la Licencia Pública de Eclipse (EPL). Ver el archivo [LICENSE](LICENSE.md) para más detalles.
 
 ## Contacto
 
