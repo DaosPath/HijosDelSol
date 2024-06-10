@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     prevChapterButton.addEventListener('click', () => {
-        window.location.href = '/Saint_Young_Men/chapters/chapter0/index.html'; // Ruta absoluta
+        window.location.href = '/Saint_Young_Men'; // Ruta absoluta
     });
 
     nextChapterButton.addEventListener('click', () => {
