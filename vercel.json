@@ -3,6 +3,7 @@
     { "source": "/recursos", "destination": "/recursos.html" },
     { "source": "/discord", "destination": "/discord.html" },
     { "source": "/", "destination": "/index.html" },
-    { "source": "/Saint_Young_Men/:chapter", "destination": "/Saint_Young_Men/chapters/:chapter/index.html" }
+    { "source": "/Saint_Young_Men/:chapter", "destination": "/Saint_Young_Men/chapters/:chapter/index.html" },
+    { "source": "/politicas/comentarios", "destination": "/Politicas/Comentarios/comments-policy.html" }
   ]
 }
