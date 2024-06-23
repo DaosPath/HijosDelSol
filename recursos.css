@@ -33,7 +33,7 @@ body, html {
     align-items: center;
 }
 
-.header .search-bar input {z
+.header .search-bar input {
     padding: 5px;
     font-size: 1em;
     border: none;
