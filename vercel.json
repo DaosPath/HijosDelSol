@@ -1,10 +1,43 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "recursos-backend/index.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "recursos.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "discord.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Politicas/Comentarios/comments-policy.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Saint_Young_Men/index.html",
+      "use": "@vercel/static"
+    },
+    {
+      "src": "Saint_Young_Men/chapters/chapter1/index.html",
+      "use": "@vercel/static"
+    }
+  ],
   "rewrites": [
     { "source": "/recursos", "destination": "/recursos.html" },
     { "source": "/discord", "destination": "/discord.html" },
     { "source": "/", "destination": "/index.html" },
     { "source": "/politicas/comentarios", "destination": "/Politicas/Comentarios/comments-policy.html" },
     { "source": "/Saint_Young_Men", "destination": "/Saint_Young_Men/index.html" },
-    { "source": "/Saint_Young_Men/capitulo-1", "destination": "/Saint_Young_Men/chapters/chapter1/index.html" }
+    { "source": "/Saint_Young_Men/capitulo-1", "destination": "/Saint_Young_Men/chapters/chapter1/index.html" },
+    
+    { "source": "/api/(.*)", "destination": "/recursos-backend/index.js" }
   ]
 }
