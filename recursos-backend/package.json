@@ -1,0 +1,17 @@
+{
+  "name": "recursos-backend",
+  "version": "1.0.0",
+  "description": "Backend para el proyecto Recursos, manejando las API necesarias para el frontend.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["backend", "api", "express", "recursos"],
+  "author": "Tu Nombre",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.1"
+  }
+}

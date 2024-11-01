@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "title": "La teología de la medicina",
+    "author": "Thomas Szasz",
+    "description": "Una crítica incisiva de la medicina moderna, comparándola con una religión donde los médicos ejercen control cuasi-religioso sobre los pacientes.",
+    "ratings": {
+      "elevado": 1,
+      "transformador": 3,
+      "inspirador": 3
+    },
+    "numericRatings": [
+      5,
+      4,
+      4,
+      5,
+      5,
+      5
+    ],
+    "comments": [],
+    "pdfUrl": "/pdfs/la_teologia_de_la_medicina.pdf"
+  },
+  {
+    "id": "2",
+    "title": "Democracia",
+    "author": "Charles Tilly",
+    "description": "Analiza la democratización y desdemocratización, enfocándose en redes de confianza y desigualdades categóricas.",
+    "ratings": {
+      "elevado": 1,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/democracia.pdf"
+  },
+  {
+    "id": "3",
+    "title": "El Arte de la Prudencia",
+    "author": "Baltasar Gracián",
+    "description": "Una colección de 300 aforismos sobre conducta y toma de decisiones, ofreciendo consejos prácticos y sabiduría atemporal.",
+    "ratings": {
+      "elevado": 0,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/el_arte_de_la_prudencia.pdf"
+  },
+  {
+    "id": "4",
+    "title": "Los Novios",
+    "author": "Alessandro Manzoni",
+    "description": "Renzo y Lucía enfrentan obstáculos para casarse en la Lombardía del siglo XVII, bajo el dominio español.",
+    "ratings": {
+      "elevado": 0,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/los_novios.pdf"
+  },
+  {
+    "id": "5",
+    "title": "Viaje al Oeste",
+    "author": "Wu Cheng'en",
+    "description": "Una aventura épica que relata el viaje espiritual hacia la iluminación.",
+    "ratings": {
+      "elevado": 0,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/viaje_al_oeste.pdf"
+  },
+  {
+    "id": "6",
+    "title": "El Tao Te Ching",
+    "author": "Lao Tse",
+    "description": "Una obra clásica de la filosofía taoísta que ofrece enseñanzas profundas sobre la vida y el universo.",
+    "ratings": {
+      "elevado": 0,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/el_tao_te_ching.pdf"
+  },
+  {
+    "id": "7",
+    "title": "Nuestro derecho a las drogas",
+    "author": "Thomas Szasz",
+    "description": "Defiende el mercado libre de drogas y critica la prohibición estatal como una forma de coacción y control social.",
+    "ratings": {
+      "elevado": 0,
+      "transformador": 0,
+      "inspirador": 0
+    },
+    "numericRatings": [],
+    "comments": [],
+    "pdfUrl": "/pdfs/nuestro_derecho_a_las_drogas.pdf"
+  }
+]
