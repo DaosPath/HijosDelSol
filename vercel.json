@@ -21,15 +21,7 @@
   "routes": [
     { "src": "/api/(.*)", "dest": "index.js" },
     { "src": "/(.*)", "dest": "/$1" }
-  ]
-}
-
-
-
-
-
-
-{
+  ],
   "rewrites": [
     { "source": "/recursos", "destination": "/recursos.html" },
     { "source": "/discord", "destination": "/discord.html" },
